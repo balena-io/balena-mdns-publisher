@@ -1,0 +1,15 @@
+{
+  "version": "0.0.1",
+  "main": "balena-mdns-publish.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "author": "Heds Simons <heds@resin.io>",
+  "license": "Apache-2.0",
+  "private": true,
+  "dependencies": {
+    "avahi-dbus": "^0.1.0",
+    "bluebird": "^3.5.1",
+    "dbus": "^1.0.3"
+  }
+}

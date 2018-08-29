@@ -1,0 +1,13 @@
+[Unit]
+Description=balena-mdns-publisher
+Requires=confd.service balena-root-ca.service
+After=confd.service balena-root-ca.service
+
+[Service]
+WorkingDirectory=/usr/src/app
+EnvironmentFile=/usr/src/app/config/env
+ExecStart=/usr/local/bin/npm start
+Restart=always
+
+[Install]
+WantedBy=basic.target

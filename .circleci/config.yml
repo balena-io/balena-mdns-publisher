@@ -1,0 +1,41 @@
+---
+version: 2
+jobs:
+  build:
+    docker:
+      - image: library/docker:1.12.6
+    working_directory: /tmp/build
+    environment:
+      DOCKER_USERNAME: travisciresin
+      DOCKER_IMAGE: resin/balena-mdns-publisher
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run: |
+          docker info
+          docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+      - run:
+          name: Build
+          command: |
+            set -ex
+            docker pull ${DOCKER_IMAGE}:${CIRCLE_BRANCH} || true
+            docker build --rm=false --pull --tag ${DOCKER_IMAGE}:${CIRCLE_SHA1} .
+      - deploy:
+          command: |
+              docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+              set -ex
+              docker push ${DOCKER_IMAGE}:${CIRCLE_SHA1}
+              docker tag ${DOCKER_IMAGE}:${CIRCLE_SHA1} ${DOCKER_IMAGE}:${CIRCLE_BRANCH}
+              docker push ${DOCKER_IMAGE}:${CIRCLE_BRANCH}
+              if [ "${CIRCLE_TAG}" != "" ]; then
+                docker tag ${DOCKER_IMAGE}:${CIRCLE_SHA1} ${DOCKER_IMAGE}:${CIRCLE_TAG}
+                docker push ${DOCKER_IMAGE}:${CIRCLE_TAG}
+              fi
+
+              # Tag the branch
+              apk add --no-cache git
+              tag=$(git describe --tags) || true
+              if [ "${tag}" != "" ]; then
+                docker tag ${DOCKER_IMAGE}:${CIRCLE_SHA1} ${DOCKER_IMAGE}:${tag}
+                docker push ${DOCKER_IMAGE}:${tag}
+              fi
