@@ -1,4 +1,4 @@
-FROM resin/resin-base:v4.2.1
+FROM resin/resin-base:v4.3.0
 
 RUN apt-get update && \
     apt-get install -yq --no-install-recommends \
@@ -8,11 +8,11 @@ RUN apt-get update && \
 WORKDIR /usr/src/app
 
 # Copies the package.json first for better cache on later pushes
-COPY package.json package.json
+COPY package.json package-lock.json /usr/src/app/
 
 # Install the publisher
-RUN JOBS=MAX npm install --production --unsafe-perm && npm cache clean --force && rm -rf /tmp/*
-COPY . ./
+RUN JOBS=MAX npm ci --unsafe-perm --production && npm cache clean --force && rm -rf /tmp/*
+COPY . /usr/src/app/
 
 # Copy and enable the service
 COPY config/services /etc/systemd/system
