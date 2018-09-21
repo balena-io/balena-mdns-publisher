@@ -1,4 +1,4 @@
-FROM resin/resin-base:v4.3.0
+FROM resin/resin-base:v4.4.0
 
 RUN apt-get update && \
     apt-get install -yq --no-install-recommends \
