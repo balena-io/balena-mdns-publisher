@@ -1,4 +1,4 @@
-FROM resin/resin-base:v4.4.1
+FROM balena/open-balena-base:v4.5.0
 
 RUN apt-get update && \
     apt-get install -yq --no-install-recommends \
