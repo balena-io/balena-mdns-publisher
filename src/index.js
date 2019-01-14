@@ -28,6 +28,7 @@ const MDNSHosts = [
     'terminal.devices',
     'db',
     'git',
+    'resin-image-maker.img',
     'img',
     'redis',
     'registry',
