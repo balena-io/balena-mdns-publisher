@@ -1,4 +1,4 @@
-FROM balena/open-balena-base:v5.0.1
+FROM balena/open-balena-base:armv7-fin
 
 RUN apt-get update && \
     apt-get install -yq --no-install-recommends \
