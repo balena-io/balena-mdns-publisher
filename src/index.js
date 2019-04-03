@@ -17,29 +17,6 @@ const os = require('os');
 const dbus = require('dbus-native');
 const bus = Promise.promisifyAll(dbus.systemBus());
 
-// This is an exhaustive list of the hosts required to run that backend that
-// require advertisement to the local network
-const MDNSHosts = [
-    'admin',
-    'api',
-    'builder',
-    'dashboard',
-    'devices',
-    'terminal.devices',
-    'db',
-    'git',
-    'resin-image-maker.img',
-    'img',
-    'redis',
-    'registry',
-    'registry2',
-    'resin-image-maker.s3',
-    's3',
-    'sentry',
-    'ui',
-    'vpn',
-];
-
 // Retrieve the IPv4 address for the named interface,
 const getNamedInterfaceAddr = (intf) => {
     const interface = os.networkInterfaces()[intf];
@@ -101,6 +78,13 @@ const addHostAddress = (hostname, address) => {
     });
 };
 
+// Use the 'MDNS_SUBDOMAINS' envvar to collect the list of hosts to
+// advertise
+if (!process.env.MDNS_TLD || !process.env.MDNS_SUBDOMAINS || !process.env.INTERFACE) {
+    throw new Error('INTERFACE, MDNS_TLD and MDNS_SUBDOMAINS must be set.');
+}
+
+const MDNSHosts = JSON.parse(process.env.MDNS_SUBDOMAINS);
 
 // Get IP address for the specified interface, and the TLD to use.
 const ipAddr = getNamedInterfaceAddr(process.env.INTERFACE);
