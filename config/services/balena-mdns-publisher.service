@@ -8,7 +8,7 @@ StandardOutput=journal+console
 StandardError=journal+console
 WorkingDirectory=/usr/src/app
 EnvironmentFile=/usr/src/app/config/env
-ExecStart=/usr/local/bin/npm start
+ExecStart=/usr/src/app/bin/balena-mdns-publisher
 Restart=always
 
 [Install]
