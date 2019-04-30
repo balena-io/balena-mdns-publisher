@@ -64,22 +64,28 @@ const getNamedInterfaceAddr = (intf: string): string => {
 
 // Retrieve the IPv4 address for the default balena internet-connected interface
 const getDefaultInterfaceAddr = async (): Promise<string> => {
-	let deviceDetails: DeviceDetails;
-	try {
-		deviceDetails = await request({
-			uri: `${process.env.BALENA_SUPERVISOR_ADDRESS}/v1/device?apikey=${
-				process.env.BALENA_SUPERVISOR_API_KEY
-			}`,
-			json: true,
-			method: 'GET',
-		}).promise();
-	} catch (_err) {
-		throw new Error(
-			'Could not acquire IP address, is this is a Balena device?',
-		);
+	let deviceDetails: DeviceDetails | null = null;
+
+	// We continue to attempt to get the default IP address every 10 seconds,
+	// inifinitely, as without our service the rest won't work.
+	while (!deviceDetails) {
+		try {
+			deviceDetails = await request({
+				uri: `${process.env.BALENA_SUPERVISOR_ADDRESS}/v1/device?apikey=${
+					process.env.BALENA_SUPERVISOR_API_KEY
+				}`,
+				json: true,
+				method: 'GET',
+			}).promise();
+		} catch (_err) {
+			console.log('Could not acquire IP address from Supervisor, retrying in 10 seconds');
+			await Bluebird.delay(10000);
+		}
 	}
 
-	return deviceDetails.ip_address;
+	// Ensure that we only use the first returned IP address route. We don't want to broadcast
+	// on multiple subnets.
+	return deviceDetails.ip_address.split(' ')[0];
 };
 
 // Retrieve a new group for address publishing.
