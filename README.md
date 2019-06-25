@@ -38,17 +38,28 @@ shows the information required:
     cap_add:
         - SYS_RESOURCE
         - SYS_ADMIN
+    security_opt:
+        - 'apparmor:unconfined'
+    tmpfs:
+        - /run
+        - /sys/fs/cgroup
     environment:
         CONFD_BACKEND: ENV
         # The name of the TLD to use. This *must* match certificates used for the rest of
         # the resin backend (eg. that for BALENA_ROOT_CA if present).
         MDNS_TLD: "resindev.local"
+        # The list of subdomains to publish
+        MDNS_SUBDOMAINS: [ "admin", "api" ]
         # The expectation is the DBus socket to use is always at the following location.
         DBUS_SESSION_BUS_ADDRESS: "unix:path=/host/run/dbus/system_bus_socket"
         # Selects the interface used for incoming connections from the wider subnet.
         # For NUCs, this is `enp0s3`. For RPis, it's `eth0`. If running natively, pick
-        # the appropriate interface.
+        # the appropriate interface. You can remove this envvar to allow the service
+        # to pick the default balena device Internet connected IP address.
         INTERFACE: "enp0s3"
+        # API token to retrieve all device information. Usually the Proxy services API key.
+        # Only required if device public URL access is rquired.
+        MDNS_API_TOKEN: "proxyApiKey"
 ```
 
 ### Generic Linux Host
@@ -73,9 +84,12 @@ definition:
 ```
     #labels:
     #    io.resin.features.dbus: '1'
+    #    io.balena.features.supervisor-api: '1'
     #tmpfs:
     #    - /run
     #    - /sys/fs/cgroup
+    # environment:
+    #    BALENA_ROOT_CA: "<base64CA>"
 ```
 
 Again, this is required for access to the host DBUS socket and to allow the
