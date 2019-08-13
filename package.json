@@ -24,7 +24,7 @@
     "balena-sdk": "^12.1.3",
     "bluebird": "^3.5.1",
     "dbus-native": "^0.4.0",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.15",
     "request": "^2.88.0",
     "request-promise": "^4.2.4"
   },
