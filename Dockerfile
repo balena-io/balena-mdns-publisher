@@ -3,6 +3,7 @@ FROM balena/open-balena-base:v8.0.3 as base
 RUN apt-get update && \
     apt-get install -yq --no-install-recommends \
     libdbus-glib-1-dev \
+    dnsmasq \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /usr/src/app
@@ -15,6 +16,7 @@ RUN JOBS=MAX npm ci --unsafe-perm --production && npm cache clean --force && rm 
 
 # Copy and enable the service
 COPY config/services /etc/systemd/system
+RUN systemctl disable dnsmasq.service
 RUN systemctl enable balena-mdns-publisher.service
 
 # Build service
@@ -33,4 +35,3 @@ FROM base
 COPY --from=build /usr/src/app/build /usr/src/app/build
 COPY --from=build /usr/src/app/bin /usr/src/app/bin
 COPY --from=build /usr/src/app/config /usr/src/app/config
-COPY --from=base /usr/src/app/node_modules /usr/src/app/node_modules
