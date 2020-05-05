@@ -1,5 +1,5 @@
 {
-  "version": "1.7.5",
+  "version": "1.7.6",
   "scripts": {
     "build": "tsc",
     "prettify": "prettier --config ./node_modules/resin-lint/config/.prettierrc --write \"src/**/*.ts\" \"typings/**/*.ts\"",
