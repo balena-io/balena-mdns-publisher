@@ -60,7 +60,7 @@ const dbus = systemBus();
  * @param message DBus message to send
  */
 const dbusInvoker = (message: Message): PromiseLike<any> => {
-	return Bluebird.fromCallback(cb => {
+	return Bluebird.fromCallback((cb) => {
 		return dbus.invoke(message, cb);
 	});
 };
@@ -106,9 +106,7 @@ const getDefaultInterfaceAddr = async (): Promise<string> => {
 	while (!deviceDetails) {
 		try {
 			deviceDetails = await request({
-				uri: `${process.env.BALENA_SUPERVISOR_ADDRESS}/v1/device?apikey=${
-					process.env.BALENA_SUPERVISOR_API_KEY
-				}`,
+				uri: `${process.env.BALENA_SUPERVISOR_ADDRESS}/v1/device?apikey=${process.env.BALENA_SUPERVISOR_API_KEY}`,
 				json: true,
 				method: 'GET',
 			}).promise();
@@ -220,14 +218,17 @@ const reapDevices = async (deviceTld: string, address: string) => {
 		const devices = await balena.models.device.getAll();
 
 		// Get list of all accessible devices
-		const newAccessible = _.filter(devices, device => device.is_web_accessible);
+		const newAccessible = _.filter(
+			devices,
+			(device) => device.is_web_accessible,
+		);
 
 		// Get all devices that are not in both lists
 		const xorList = _.xorBy(accessibleDevices, newAccessible, 'uuid');
 
 		// Get all new devices to be published and old to be unpublished
 		const toUnpublish: BalenaSdk.Device[] = [];
-		const toPublish = _.filter(xorList, device => {
+		const toPublish = _.filter(xorList, (device) => {
 			const filter = _.find(newAccessible, { uuid: device.uuid })
 				? true
 				: false;
@@ -275,7 +276,7 @@ const balena = BalenaSdk({
 		}
 
 		// For each address, publish the interface IP address.
-		await Bluebird.map(MDNSHosts, host => {
+		await Bluebird.map(MDNSHosts, (host) => {
 			const fullHostname = `${host}.${tld}`;
 
 			return addHostAddress(fullHostname, ipAddr);

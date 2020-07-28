@@ -2,8 +2,8 @@
   "version": "1.7.8",
   "scripts": {
     "build": "tsc",
-    "prettify": "prettier --config ./node_modules/resin-lint/config/.prettierrc --write \"src/**/*.ts\" \"typings/**/*.ts\"",
-    "lint": "resin-lint --typescript src/ && tsc --noEmit",
+    "prettify": "balena-lint --typescript --fix src/ typings/",
+    "lint": "balena-lint --typescript src/ typings/ && tsc --noEmit",
     "start": "node build/app.js"
   },
   "author": "Heds Simons <heds@balena.io>",
@@ -21,22 +21,21 @@
   },
   "private": true,
   "dependencies": {
-    "balena-sdk": "^12.1.3",
-    "bluebird": "^3.5.1",
+    "balena-sdk": "^12.33.0",
+    "bluebird": "^3.7.2",
     "dbus-native": "^0.4.0",
-    "lodash": "^4.17.15",
-    "request": "^2.88.0",
-    "request-promise": "^4.2.4"
+    "lodash": "^4.17.19",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.134",
-    "@types/node": "^12.11.1",
-    "@types/request-promise": "^4.1.42",
-    "husky": "^1.3.1",
-    "lint-staged": "^8.1.5",
-    "prettier": "^1.16.4",
-    "resin-lint": "^3.0.1",
-    "typescript": "^3.4.3"
+    "@balena/lint": "^5.1.0",
+    "@types/lodash": "^4.14.158",
+    "@types/node": "^12.12.53",
+    "@types/request-promise": "^4.1.46",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "typescript": "^3.9.7"
   },
   "husky": {
     "hooks": {
@@ -46,9 +45,7 @@
   },
   "lint-staged": {
     "*.ts": [
-      "prettier --config ./node_modules/resin-lint/config/.prettierrc --write",
-      "resin-lint --typescript --no-prettier",
-      "git add"
+      "balena-lint --typescript --fix"
     ]
   }
 }
