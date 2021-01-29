@@ -1,4 +1,15 @@
 - commits:
+    - subject: Remove Hedley and Will from CODEOWNERS
+      hash: 5dd5b62a107a0fea5a4c7f6901696182ae936cd6
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: dfunckt
+      nested: []
+  version: 1.9.4
+  date: 2021-01-29T15:54:10.662Z
+- commits:
     - subject: Add .versionbot/CHANGELOG.yml for nested changelogs
       hash: 1f722fc332677f81c610655e24b9b20f382fbb12
       body: ''
