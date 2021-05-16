@@ -1,4 +1,17 @@
 - commits:
+    - subject: Update apparmor security-opt example
+      hash: 3256a5f7f0d856c0a78f6608b937d836ff521904
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Josh Bowling <josh@balena.io>
+        signed-off-by: Josh Bowling <josh@balena.io>
+      author: Josh Bowling
+      nested: []
+  version: 1.9.9
+  date: 2021-05-16T22:48:01.031Z
+- commits:
     - subject: Update open-balena-base to 11.2.0
       hash: 5dfaa48567307008aea74ba7190fe5ddc3057a7f
       body: |
