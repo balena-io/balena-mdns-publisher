@@ -26,7 +26,7 @@ Regardless of target, the service requires particular environment variables and 
             - SYS_RESOURCE
             - SYS_ADMIN
         security_opt:
-            - 'apparmor:unconfined'
+            - 'apparmor=unconfined'
         tmpfs:
             - /run
             - /sys/fs/cgroup
@@ -81,7 +81,7 @@ The following is an example of adding the balena mDNS publisher to a BoB instanc
             - SYS_RESOURCE
             - SYS_ADMIN
         security_opt:
-            - 'apparmor:unconfined'
+            - 'apparmor=unconfined'
         tmpfs:
             - /run
             - /sys/fs/cgroup
