@@ -1,4 +1,17 @@
 - commits:
+    - subject: >-
+        Update open-balena-base to 11.3.7 Update open-balena-base from 11.3.3 to
+        11.3.7
+      hash: 2245a0988afbac05bf396c03353bd533862daaea
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: ab77
+      nested: []
+  version: 1.9.12
+  date: 2021-07-30T21:55:36.156Z
+- commits:
     - subject: Update open-balena-base to 11.3.3
       hash: 807e438e07d3afdf4b46de41c14a905eca19a4a5
       body: |
