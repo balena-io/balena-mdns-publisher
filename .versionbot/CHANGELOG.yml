@@ -1,4 +1,15 @@
 - commits:
+    - subject: Correctly handle cases with no IPv6 connectivity
+      hash: 2b4f36240bc85e04b33afc301031dacbc51c6cf1
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: ab77
+      nested: []
+  version: 1.9.16
+  date: 2021-08-18T18:34:49.688Z
+- commits:
     - subject: Add IPv6 support
       hash: 6052eb1c4214228e0279c5595f38e6f4d6cec51f
       body: |
