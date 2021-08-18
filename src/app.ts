@@ -1,39 +1,8 @@
-/**
- * @license
- * Copyright (C) 2018-2019  Balena Ltd.
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU Affero General Public License as published
- * by the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU Affero General Public License for more details.
- * You should have received a copy of the GNU Affero General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
 import * as BalenaSdk from 'balena-sdk';
 import * as Bluebird from 'bluebird';
 import { Message, systemBus } from 'dbus-native';
 import * as _ from 'lodash';
 import * as os from 'os';
-import * as request from 'request-promise';
-
-/**
- * Supervisor returned device details interface.
- */
-interface HostDeviceDetails {
-	api_port: string;
-	ip_address: string;
-	os_version: string;
-	supervisor_version: string;
-	update_pending: boolean;
-	update_failed: boolean;
-	update_downloaded: boolean;
-	commit: string;
-	status: string;
-	download_progress: string | null;
-}
 
 /**
  * Hosts published via Avahi.
@@ -65,62 +34,18 @@ const dbusInvoker = (message: Message): PromiseLike<any> => {
 	});
 };
 
-/**
- * Retrieves the IPv4 address for the named interface.
- *
- * @param intf Name of interface to query
- */
-const getNamedInterfaceAddr = (intf: string): string => {
-	const nics = os.networkInterfaces()[intf];
-
-	if (!nics) {
-		throw new Error('The configured interface is not present, exiting');
-	}
-
-	// We need to look for the IPv4 address
-	let ipv4Intf;
-	for (const nic of nics) {
-		if (nic.family === 'IPv4') {
-			ipv4Intf = nic;
-			break;
-		}
-	}
-
-	if (!ipv4Intf) {
-		throw new Error(
-			'IPv4 version of configured interface is not present, exiting',
-		);
-	}
-
-	return ipv4Intf.address;
+const getIPv4InterfaceInfo = (iface?: string): os.NetworkInterfaceInfo[] => {
+	return Object.entries(os.networkInterfaces())
+		.filter(([nic]) => !iface || nic === iface)
+		.flatMap(([, ips]) => ips || [])
+		.filter((ip) => !ip.internal && ip.family === 'IPv4');
 };
 
-/**
- * Retrieve the IPv4 address for the default balena internet-connected interface.
- */
-const getDefaultInterfaceAddr = async (): Promise<string> => {
-	let deviceDetails: HostDeviceDetails | null = null;
-
-	// We continue to attempt to get the default IP address every 10 seconds,
-	// inifinitely, as without our service the rest won't work.
-	while (!deviceDetails) {
-		try {
-			deviceDetails = await request({
-				uri: `${process.env.BALENA_SUPERVISOR_ADDRESS}/v1/device?apikey=${process.env.BALENA_SUPERVISOR_API_KEY}`,
-				json: true,
-				method: 'GET',
-			}).promise();
-		} catch (_err) {
-			console.log(
-				'Could not acquire IP address from Supervisor, retrying in 10 seconds',
-			);
-			await Bluebird.delay(10000);
-		}
-	}
-
-	// Ensure that we only use the first returned IP address route. We don't want to broadcast
-	// on multiple subnets.
-	return deviceDetails.ip_address.split(' ')[0];
+const getIPv6InterfaceInfo = (iface?: string): os.NetworkInterfaceInfo[] => {
+	return Object.entries(os.networkInterfaces())
+		.filter(([nic]) => !iface || nic === iface)
+		.flatMap(([, ips]) => ips || [])
+		.filter((ip) => !ip.internal && ip.family === 'IPv6' && ip.scopeid === 0);
 };
 
 /**
@@ -138,46 +63,48 @@ const getGroup = async (): Promise<string> => {
 /**
  * Add a host address to the local domain.
  *
- * @param hostname Full hostname to publish
- * @param address  IP address for the hostname
+ * @param hostname	Full hostname to publish
+ * @param addresses	IP address for the hostname
  */
 const addHostAddress = async (
 	hostname: string,
-	address: string,
+	addresses: string[],
 ): Promise<void> => {
-	// If the hostname is already published with the same address, return
-	if (_.find(publishedHosts, { hostname, address })) {
-		return;
+	for (const address of addresses) {
+		// If the hostname is already published with the same address, return
+		if (_.find(publishedHosts, { hostname, address })) {
+			return;
+		}
+
+		console.log(`Adding ${hostname} at address ${address} to local MDNS pool`);
+
+		// We require a new group for each address.
+		// We don't catch errors, as our restart policy is to not restart.
+		const group = await getGroup();
+
+		await dbusInvoker({
+			destination: 'org.freedesktop.Avahi',
+			path: group,
+			interface: 'org.freedesktop.Avahi.EntryGroup',
+			member: 'AddAddress',
+			body: [-1, -1, 0x10, hostname, address],
+			signature: 'iiuss',
+		});
+
+		await dbusInvoker({
+			destination: 'org.freedesktop.Avahi',
+			path: group,
+			interface: 'org.freedesktop.Avahi.EntryGroup',
+			member: 'Commit',
+		});
+
+		// Add to the published hosts list
+		publishedHosts.push({
+			group,
+			hostname,
+			address,
+		});
 	}
-
-	console.log(`Adding ${hostname} at address ${address} to local MDNS pool`);
-
-	// We require a new group for each address.
-	// We don't catch errors, as our restart policy is to not restart.
-	const group = await getGroup();
-
-	await dbusInvoker({
-		destination: 'org.freedesktop.Avahi',
-		path: group,
-		interface: 'org.freedesktop.Avahi.EntryGroup',
-		member: 'AddAddress',
-		body: [-1, -1, 0x10, hostname, address],
-		signature: 'iiuss',
-	});
-
-	await dbusInvoker({
-		destination: 'org.freedesktop.Avahi',
-		path: group,
-		interface: 'org.freedesktop.Avahi.EntryGroup',
-		member: 'Commit',
-	});
-
-	// Add to the published hosts list
-	publishedHosts.push({
-		group,
-		hostname,
-		address,
-	});
 };
 
 /**
@@ -209,48 +136,50 @@ const removeHostAddress = async (hostname: string): Promise<void> => {
 /**
  * Scan balena devices with accessible public URLs
  *
- * @param tld     TLD to use for URL publishing
- * @param address IP address to use for publishing
+ * @param tld		TLD to use for URL publishing
+ * @param addresses	IP addresses to use for publishing
  */
-const reapDevices = async (deviceTld: string, address: string) => {
-	// Query the SDK using the Proxy service key for *all* current devices
-	try {
-		const devices = await balena.models.device.getAll();
+const reapDevices = async (deviceTld: string, addresses: string[]) => {
+	for (const address of addresses) {
+		// Query the SDK using the Proxy service key for *all* current devices
+		try {
+			const devices = await balena.models.device.getAll();
 
-		// Get list of all accessible devices
-		const newAccessible = _.filter(
-			devices,
-			(device) => device.is_web_accessible,
-		);
+			// Get list of all accessible devices
+			const newAccessible = _.filter(
+				devices,
+				(device) => device.is_web_accessible,
+			);
 
-		// Get all devices that are not in both lists
-		const xorList = _.xorBy(accessibleDevices, newAccessible, 'uuid');
+			// Get all devices that are not in both lists
+			const xorList = _.xorBy(accessibleDevices, newAccessible, 'uuid');
 
-		// Get all new devices to be published and old to be unpublished
-		const toUnpublish: BalenaSdk.Device[] = [];
-		const toPublish = _.filter(xorList, (device) => {
-			const filter = _.find(newAccessible, { uuid: device.uuid })
-				? true
-				: false;
-			if (!filter) {
-				toUnpublish.push(device);
+			// Get all new devices to be published and old to be unpublished
+			const toUnpublish: BalenaSdk.Device[] = [];
+			const toPublish = _.filter(xorList, (device) => {
+				const filter = _.find(newAccessible, { uuid: device.uuid })
+					? true
+					: false;
+				if (!filter) {
+					toUnpublish.push(device);
+				}
+				return filter;
+			});
+
+			// Publish everything required
+			for (const device of toPublish) {
+				await addHostAddress(`${device.uuid}.devices.${deviceTld}`, [address]);
 			}
-			return filter;
-		});
 
-		// Publish everything required
-		for (const device of toPublish) {
-			await addHostAddress(`${device.uuid}.devices.${deviceTld}`, address);
+			// Unpublish the rest
+			for (const device of toUnpublish) {
+				await removeHostAddress(`${device.uuid}.devices.${deviceTld}`);
+			}
+
+			accessibleDevices = newAccessible;
+		} catch (err) {
+			console.log(`Couldn't reap devices list: ${err}`);
 		}
-
-		// Unpublish the rest
-		for (const device of toUnpublish) {
-			await removeHostAddress(`${device.uuid}.devices.${deviceTld}`);
-		}
-
-		accessibleDevices = newAccessible;
-	} catch (err) {
-		console.log(`Couldn't reap devices list: ${err}`);
 	}
 };
 
@@ -267,25 +196,23 @@ const balena = BalenaSdk({
 
 (async () => {
 	try {
-		let ipAddr: string;
-		// Get IP address for the specified interface, and the TLD to use.
-		if (process.env.INTERFACE) {
-			ipAddr = getNamedInterfaceAddr(process.env.INTERFACE);
-		} else {
-			ipAddr = await getDefaultInterfaceAddr();
-		}
+		// get the first non-link local IP for each address family
+		const ipAddrs = _.compact([
+			getIPv4InterfaceInfo(process.env.INTERFACE)[0].address,
+			getIPv6InterfaceInfo(process.env.INTERFACE)[0].address,
+		]);
 
 		// For each address, publish the interface IP address.
 		await Bluebird.map(MDNSHosts, (host) => {
 			const fullHostname = `${host}.${tld}`;
 
-			return addHostAddress(fullHostname, ipAddr);
+			return addHostAddress(fullHostname, ipAddrs);
 		});
 
 		// Finally, login to the SDK and set a timerInterval every 20 seconds to update public URL addresses
 		if (process.env.MDNS_API_TOKEN) {
 			await balena.auth.loginWithToken(process.env.MDNS_API_TOKEN);
-			setInterval(() => reapDevices(tld, ipAddr), 20 * 1000);
+			setInterval(() => reapDevices(tld, ipAddrs), 20 * 1000);
 		}
 	} catch (err) {
 		console.log(`balena MDNS publisher error:\n${err}`);
