@@ -198,9 +198,9 @@ const balena = BalenaSdk({
 	try {
 		// get the first non-link local IP for each address family
 		const ipAddrs = _.compact([
-			getIPv4InterfaceInfo(process.env.INTERFACE)[0].address,
-			getIPv6InterfaceInfo(process.env.INTERFACE)[0].address,
-		]);
+			getIPv4InterfaceInfo(process.env.INTERFACE)[0],
+			getIPv6InterfaceInfo(process.env.INTERFACE)[0],
+		]).flatMap((ip) => ip.address);
 
 		// For each address, publish the interface IP address.
 		await Bluebird.map(MDNSHosts, (host) => {
