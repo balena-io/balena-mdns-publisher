@@ -1,8 +1,9 @@
-FROM balena/open-balena-base:v12.0.0 as base
+FROM balena/open-balena-base:v12.0.1 as base
 
 RUN apt-get update && \
     apt-get install -yq --no-install-recommends \
     libdbus-glib-1-dev \
+    avahi-utils \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /usr/src/app
