@@ -189,7 +189,7 @@ if (!process.env.MDNS_TLD || !process.env.MDNS_SUBDOMAINS) {
 	throw new Error('MDNS_TLD and MDNS_SUBDOMAINS must be set.');
 }
 const tld = process.env.MDNS_TLD;
-const MDNSHosts = JSON.parse(process.env.MDNS_SUBDOMAINS);
+const MDNSHosts = process.env.MDNS_SUBDOMAINS.split(',');
 const balena = BalenaSdk({
 	apiUrl: `https://api.${process.env.MDNS_TLD}/`,
 });
