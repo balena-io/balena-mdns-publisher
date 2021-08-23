@@ -1,4 +1,15 @@
 - commits:
+    - subject: >-
+        minor: switch to open-balena-base:no-systemd. removed system service
+        file, update readme.
+      hash: 4c12ff59ac10dbf9d1617d71379a697477fce732
+      body: ''
+      footer: {}
+      author: Thomas Manning
+      nested: []
+  version: 1.11.0
+  date: 2021-08-23T04:05:39.767Z
+- commits:
     - subject: Add avahi-utils package
       hash: 4d458f1708cd9f6c5a24eda8029c6f80af087d91
       body: |
