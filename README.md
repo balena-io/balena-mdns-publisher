@@ -8,7 +8,7 @@ This allows any machine on the same subnet that is not more than one hop from th
 
 The host machine running the publisher service must be running an instance of the [Avahi](https://www.avahi.org/) daemon, which this service uses for address publishing.
 
-Additionally, the service requires access to the host DBUS socket.
+Additionally, the service requires the ability to use `systemd` (ie. access to host `cgroups` or relevant `tmpfs` mount), and the host DBUS socket.
 
 ## Installation and Running
 
@@ -22,6 +22,14 @@ Regardless of target, the service requires particular environment variables and 
     balena-mdns-publisher:
         image: 'balena/balena-mdns-publisher:master'
         network_mode: host
+        cap_add:
+            - SYS_RESOURCE
+            - SYS_ADMIN
+        security_opt:
+            - 'apparmor:unconfined'
+        tmpfs:
+            - /run
+            - /sys/fs/cgroup
         environment:
             <See 'Environment Variables' section>
 ```
@@ -58,7 +66,8 @@ The mDNS publisher requires some additional environment variables be passed to i
 * `MDNS_API_TOKEN` (optional) - Should Public URL exposure be required, then the shared API token for the Proxy service should be set using this key. The API will be queried every 20 seconds, and any new device with an exposed public URL will have its UUID published as a subdomain. Previously published UUIDs that no longer have a public URL will be deleted
 * `BALENA_ROOT_CA` (optional) - Should the certificate chain used for the BoB/OB instance be via a self-signed CA, this value should be a Base64 encoded version of the CA's PEM certificate
 
-This allows the acquisition of the underlying DBUS socket.
+This allows the acquisition of the underlying DBUS socket, as well as the ability
+to run `systemd`.
 
 ## Example `docker-compose` Service
 
@@ -68,6 +77,14 @@ The following is an example of adding the balena mDNS publisher to a BoB instanc
     balena-mdns-publisher:
         image: 'balena/balena-mdns-publisher:master'
         network_mode: host
+        cap_add:
+            - SYS_RESOURCE
+            - SYS_ADMIN
+        security_opt:
+            - 'apparmor:unconfined'
+        tmpfs:
+            - /run
+            - /sys/fs/cgroup
         labels:
             io.balena.features.dbus: '1'
             io.balena.features.supervisor-api: '1'
