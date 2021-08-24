@@ -1,4 +1,13 @@
 - commits:
+    - subject: 'patch: Revert "switch to open-balena-base:no-systemd"'
+      hash: 722a02c0c9fccbc2e06363fd67fd48200834894e
+      body: ''
+      footer: {}
+      author: Thomas Manning
+      nested: []
+  version: 1.11.1
+  date: 2021-08-24T04:10:19.950Z
+- commits:
     - subject: >-
         minor: switch to open-balena-base:no-systemd. removed system service
         file, update readme.

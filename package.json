@@ -1,5 +1,5 @@
 {
-  "version": "1.11.0",
+  "version": "1.11.1",
   "scripts": {
     "build": "tsc",
     "prettify": "balena-lint --typescript --fix src/ typings/",
@@ -49,6 +49,6 @@
     ]
   },
   "versionist": {
-    "publishedAt": "2021-08-23T04:05:39.837Z"
+    "publishedAt": "2021-08-24T04:10:20.044Z"
   }
 }
