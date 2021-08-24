@@ -1,4 +1,27 @@
 - commits:
+    - subject: Update open-balena-base to 12.0.2
+      hash: 224712c6c32c27b3d355fa1b23b733f081cfe07f
+      body: |
+        Update open-balena-base from 12.0.1 to 12.0.2
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Pagan Gazzard
+      nested:
+        - commits:
+            - subject: Use multi-user.target as the default target
+              hash: 9006b9eb301b9a315b7fbde5fe4100681f3f4eac
+              body: ''
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: Pagan Gazzard
+              nested: []
+          version: open-balena-base-12.0.2
+          date: 2021-08-24T17:26:10.620Z
+  version: 1.11.2
+  date: 2021-08-24T17:37:19.940Z
+- commits:
     - subject: 'patch: Revert "switch to open-balena-base:no-systemd"'
       hash: 722a02c0c9fccbc2e06363fd67fd48200834894e
       body: ''
