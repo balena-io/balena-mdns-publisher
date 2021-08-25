@@ -1,4 +1,17 @@
 - commits:
+    - subject: Refactor MDNS_SUBDOMAINS handling
+      hash: 0889b787b845e799e37b7d6abb3133ad71cfb887
+      body: |
+        * correct DBUS config
+        * update docs
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: ab77
+      nested: []
+  version: 1.11.3
+  date: 2021-08-25T00:15:27.716Z
+- commits:
     - subject: Update open-balena-base to 12.0.2
       hash: 224712c6c32c27b3d355fa1b23b733f081cfe07f
       body: |
