@@ -183,15 +183,21 @@ const reapDevices = async (deviceTld: string, addresses: string[]) => {
 	}
 };
 
-// Use the 'MDNS_SUBDOMAINS' envvar to collect the list of hosts to
-// advertise
+// Use the 'MDNS_SUBDOMAINS' envvar to collect the list of hosts to advertise
 if (!process.env.MDNS_TLD || !process.env.MDNS_SUBDOMAINS) {
 	throw new Error('MDNS_TLD and MDNS_SUBDOMAINS must be set.');
 }
-const tld = process.env.MDNS_TLD;
+
+// if running on balenaOS, insert device UUID
+let tld = process.env.MDNS_TLD;
+if (process.env.BALENA_DEVICE_UUID) {
+	tld = `${process.env.BALENA_DEVICE_UUID}.${process.env.MDNS_TLD}`;
+}
+
 const MDNSHosts = process.env.MDNS_SUBDOMAINS.split(',');
+
 const balena = BalenaSdk({
-	apiUrl: `https://api.${process.env.MDNS_TLD}/`,
+	apiUrl: `https://${process.env.API_HOST}/`,
 });
 
 (async () => {
@@ -209,7 +215,8 @@ const balena = BalenaSdk({
 			return addHostAddress(fullHostname, ipAddrs);
 		});
 
-		// Finally, login to the SDK and set a timerInterval every 20 seconds to update public URL addresses
+		// Finally, login to the SDK and set a timerInterval every 20 seconds to update
+		// public URL addresses
 		if (process.env.MDNS_API_TOKEN) {
 			await balena.auth.loginWithToken(process.env.MDNS_API_TOKEN);
 			setInterval(() => reapDevices(tld, ipAddrs), 20 * 1000);
