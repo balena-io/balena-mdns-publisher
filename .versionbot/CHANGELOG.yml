@@ -1,4 +1,37 @@
 - commits:
+    - subject: Insert BALENA_DEVICE_UUID if running on balenaOS
+      hash: 9d00b53292d9fe3511b2e6613ee7ab87af9d87e0
+      body: |
+        * remove BALENA_ prefix(es)
+        * auto resolve host env vars (DNS_TLD, formerly BALENA_TLD)
+        * unset NODE_EXTRA_CA_CERTS (set globally if present by root CA service)
+
+        Update open-balena-base from 12.0.2 to 12.0.3
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: ab77
+      nested:
+        - commits:
+            - subject: Attempt to load root CA certificate bundle from file
+              hash: 493bb446e99fc7a5b6ecaa4e796942aa65ad03d0
+              body: >
+                * allows dynamic certificate generation and loading within the
+                stack
+
+                * if a (volume|directory) /certs exists, set up a notification
+                to watch
+                  for /certs/ca-bundle.pem and update CA certificates/restart confd
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: ab77
+              nested: []
+          version: open-balena-base-12.0.3
+          date: 2021-09-01T21:12:04.483Z
+  version: 1.11.4
+  date: 2021-09-01T22:59:36.058Z
+- commits:
     - subject: Refactor MDNS_SUBDOMAINS handling
       hash: 0889b787b845e799e37b7d6abb3133ad71cfb887
       body: |
