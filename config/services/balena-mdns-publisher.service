@@ -12,4 +12,4 @@ ExecStart=/usr/src/app/bin/balena-mdns-publisher
 Restart=always
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=basic.target
