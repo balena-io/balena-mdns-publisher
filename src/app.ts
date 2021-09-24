@@ -139,7 +139,7 @@ const removeHostAddress = async (hostname: string): Promise<void> => {
  * @param tld		TLD to use for URL publishing
  * @param addresses	IP addresses to use for publishing
  */
-const reapDevices = async (deviceTld: string, addresses: string[]) => {
+const reapDevices = async (addresses: string[], deviceTld?: string) => {
 	for (const address of addresses) {
 		// Query the SDK using the Proxy service key for *all* current devices
 		try {
@@ -183,18 +183,15 @@ const reapDevices = async (deviceTld: string, addresses: string[]) => {
 	}
 };
 
-// Use the 'MDNS_SUBDOMAINS' envvar to collect the list of hosts to advertise
-if (!process.env.MDNS_TLD || !process.env.MDNS_SUBDOMAINS) {
-	throw new Error('MDNS_TLD and MDNS_SUBDOMAINS must be set.');
-}
-
 // if running on balenaOS, insert device UUID
 let tld = process.env.MDNS_TLD;
-if (process.env.BALENA_DEVICE_UUID) {
+if (tld && process.env.BALENA_DEVICE_UUID) {
 	tld = `${process.env.BALENA_DEVICE_UUID}.${process.env.MDNS_TLD}`;
 }
 
-const MDNSHosts = process.env.MDNS_SUBDOMAINS.split(',');
+const MDNSHosts = process.env.MDNS_SUBDOMAINS
+	? process.env.MDNS_SUBDOMAINS.split(',')
+	: [];
 
 const balena = BalenaSdk({
 	apiUrl: `https://${process.env.API_HOST}/`,
@@ -209,17 +206,19 @@ const balena = BalenaSdk({
 		]).flatMap((ip) => ip.address);
 
 		// For each address, publish the interface IP address.
-		await Bluebird.map(MDNSHosts, (host) => {
-			const fullHostname = `${host}.${tld}`;
+		if (tld) {
+			await Bluebird.map(MDNSHosts, (host) => {
+				const fullHostname = `${host}.${tld}`;
 
-			return addHostAddress(fullHostname, ipAddrs);
-		});
+				return addHostAddress(fullHostname, ipAddrs);
+			});
+		}
 
 		// Finally, login to the SDK and set a timerInterval every 20 seconds to update
 		// public URL addresses
-		if (process.env.MDNS_API_TOKEN) {
+		if (process.env.MDNS_API_TOKEN && tld) {
 			await balena.auth.loginWithToken(process.env.MDNS_API_TOKEN);
-			setInterval(() => reapDevices(tld, ipAddrs), 20 * 1000);
+			setInterval(() => reapDevices(ipAddrs, tld), 20 * 1000);
 		}
 	} catch (err) {
 		console.log(`balena MDNS publisher error:\n${err}`);

@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+set -a
+
+[[ -f /etc/docker.env ]] && source /etc/docker.env
+
+# avahi-resolve doesn't return non-zero error code on failure :/
+for host in $(env \
+  | grep -E '^[A-Z0-9_]+_HOST=|^[A-Z0-9_]+_HOSTNAME=' \
+  | grep -Ev 'BALENA|registry\.|files\.'); do
+    avahi-resolve -n4 $(echo ${host} | awk -F'=' '{print $2}') 2>&1 | grep -vE 'Failed|Timeout' || exit $?
+done
+
+# ensure self-signed certificates are installed correctly (if any)
+[[ -n ${NODE_EXTRA_CA_CERTS} ]] && true | openssl s_client \
+  -connect "${API_HOST}":443 \
+  -CAfile "${NODE_EXTRA_CA_CERTS}"
