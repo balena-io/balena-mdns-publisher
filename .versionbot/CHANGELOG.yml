@@ -1,4 +1,86 @@
 - commits:
+    - subject: Update open-balena-base to 12.1.0
+      hash: 5c88ce678d1d044a7640e70870c88bab8ae99701
+      body: |
+        * MDNS_TLD optional (do nothing instead of throwing exception)
+        * add Docker healthcheck
+
+        Update open-balena-base from 12.0.2 to 12.1.0
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: ab77
+      nested:
+        - commits:
+            - subject: Auto-configure balenaMachine(bob)
+              hash: efb8da155b7bedec44558dfcd55cb6b535099c01
+              body: >
+                + allows balenaMachine(s)/BoB(s) to automatically configure
+                itself (without bob-cli)
+
+                + auto-configuration requires balena-ca and cert-manager to do
+                the heavy lifting prior
+
+                + corresponding [balena-on-balena
+                PR](https://github.com/balena-io/balena-on-balena/pull/261)
+
+
+                * refactor confd.service to include both root-ca and
+                host-envvars handling
+
+                * add systemd path watcher to restart confd if keys/certs change
+                during runtime
+
+                * store stack configuration available to all services in a
+                persistent/shared volume (/balena)
+
+                * change resolver order to dns => mdns (ipv4) => mdns (ipv6) =>
+                return
+
+                * configure API key and JOSE/JWT key id
+
+                * configure open-balena-vpn (PKI) environment variables
+
+                * configure Sentry DSNs
+
+                * configure API keys/tokens
+
+                * configure proxy and devices SSH keys
+
+                * bundle Git SSH keys
+
+                * refactor environment handling in non-systemd variant
+
+                * deprecate BALENA_ prefixes from confd
+              footer:
+                Change-type: minor
+                change-type: minor
+                Co-authored-by: dfunckt <dfunckt@users.noreply.github.com>
+                co-authored-by: dfunckt <dfunckt@users.noreply.github.com>
+              author: ab77
+              nested: []
+          version: open-balena-base-12.1.0
+          date: 2021-09-24T16:30:37.661Z
+        - commits:
+            - subject: Attempt to load root CA certificate bundle from file
+              hash: 493bb446e99fc7a5b6ecaa4e796942aa65ad03d0
+              body: >
+                * allows dynamic certificate generation and loading within the
+                stack
+
+                * if a (volume|directory) /certs exists, set up a notification
+                to watch
+                  for /certs/ca-bundle.pem and update CA certificates/restart confd
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: ab77
+              nested: []
+          version: open-balena-base-12.0.3
+          date: 2021-09-01T21:12:04.483Z
+  version: 1.12.0
+  date: 2021-09-24T18:46:10.251Z
+- commits:
     - subject: Insert BALENA_DEVICE_UUID if running on balenaOS
       hash: 9d00b53292d9fe3511b2e6613ee7ab87af9d87e0
       body: |
