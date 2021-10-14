@@ -1,4 +1,40 @@
 - commits:
+    - subject: Update open-balena-base to 12.1.1
+      hash: 64626d87c1907846127175d94e6aa1e5c0082279
+      body: |
+        Update open-balena-base from 12.1.0 to 12.1.1
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Akis Kesoglou
+      nested:
+        - commits:
+            - subject: >-
+                Simplify config by baking the device UUID into the DNS_TLD if
+                available
+              hash: 140aaf311c000963c51f3304a04221d386209c5a
+              body: ''
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: Akis Kesoglou
+              nested: []
+            - subject: Fix configuration for non-BoB deployments
+              hash: be5d9722d47b65ca511cfb66ab13ed1f3ddff372
+              body: >
+                The default value on the BALENA_DEVICE_UUID variable forced all
+                code paths that used to run optionally depending on whether
+                deployment was on a balenaOS device to run.
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: Akis Kesoglou
+              nested: []
+          version: open-balena-base-12.1.1
+          date: 2021-10-14T11:28:26.606Z
+  version: 1.12.1
+  date: 2021-10-14T16:19:49.236Z
+- commits:
     - subject: Update open-balena-base to 12.1.0
       hash: 5c88ce678d1d044a7640e70870c88bab8ae99701
       body: |
