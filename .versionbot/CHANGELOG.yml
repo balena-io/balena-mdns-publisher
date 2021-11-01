@@ -1,4 +1,38 @@
 - commits:
+    - subject: Update open-balena-base to 13.0.0
+      hash: 850adb3a6482dad8ba8275624dc9a44b65983ff3
+      body: |
+        Update open-balena-base from 12.1.1 to 13.0.0
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: Pagan Gazzard
+      nested:
+        - commits:
+            - subject: Update nodejs to 16.13.0 and npm 8.1.1
+              hash: ed92e55bd095696e03115761f3c396b72c801a33
+              body: ''
+              footer:
+                Change-type: major
+                change-type: major
+              author: Pagan Gazzard
+              nested: []
+          version: open-balena-base-13.0.0
+          date: 2021-10-30T01:26:26.658Z
+        - commits:
+            - subject: Update nodejs to 14.18.1 and npm to 6.14.15
+              hash: 613f0a4462227bc8dc2bb16aa91b3306c1c87b16
+              body: ''
+              footer:
+                Change-type: minor
+                change-type: minor
+              author: Pagan Gazzard
+              nested: []
+          version: open-balena-base-12.2.0
+          date: 2021-10-18T10:48:20.444Z
+  version: 1.13.0
+  date: 2021-11-01T16:55:43.258Z
+- commits:
     - subject: Update open-balena-base to 12.1.1
       hash: 64626d87c1907846127175d94e6aa1e5c0082279
       body: |
