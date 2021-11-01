@@ -2,8 +2,8 @@
   "version": "1.12.1",
   "scripts": {
     "build": "tsc",
-    "prettify": "balena-lint --typescript --fix src/ typings/",
-    "lint": "balena-lint --typescript src/ typings/ && tsc --noEmit",
+    "prettify": "balena-lint --fix src/ typings/",
+    "lint": "balena-lint src/ typings/ && tsc --noEmit",
     "start": "node build/app.js"
   },
   "author": "Heds Simons <heds@balena.io>",
@@ -24,18 +24,22 @@
     "balena-sdk": "^12.33.0",
     "bluebird": "^3.7.2",
     "dbus-native": "^0.4.0",
-    "lodash": "^4.17.19",
+    "lodash": "^4.17.21",
     "request": "^2.88.2",
     "request-promise": "^4.2.6"
   },
   "devDependencies": {
-    "@balena/lint": "^5.1.0",
-    "@types/lodash": "^4.14.158",
-    "@types/node": "^14.14.5",
-    "@types/request-promise": "^4.1.46",
-    "husky": "^4.2.5",
-    "lint-staged": "^10.2.11",
-    "typescript": "^3.9.7"
+    "@balena/lint": "^6.1.1",
+    "@types/lodash": "^4.14.176",
+    "@types/node": "^16.11.6",
+    "@types/request-promise": "^4.1.48",
+    "husky": "^4.3.8",
+    "lint-staged": "^11.2.6",
+    "typescript": "^4.4.4"
+  },
+  "engines": {
+    "node": "^16.13.0",
+    "npm": "^8.1.1"
   },
   "husky": {
     "hooks": {
@@ -45,7 +49,7 @@
   },
   "lint-staged": {
     "*.ts": [
-      "balena-lint --typescript --fix"
+      "balena-lint --fix"
     ]
   },
   "versionist": {
