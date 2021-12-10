@@ -1,4 +1,16 @@
 - commits:
+    - subject: More specific healthcheck
+      hash: 30721623a5f087b0f0f85d61bf3329fc15d538ce
+      body: |
+        * only check MDNS_TLD domains
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: ab77
+      nested: []
+  version: 1.14.2
+  date: 2021-12-10T15:58:16.034Z
+- commits:
     - subject: Update open-balena-base to 13.0.3
       hash: caef85c9e7ab1e6e20a2f16614c6329872fce005
       body: |
