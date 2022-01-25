@@ -12,7 +12,9 @@ for host in $(env \
     avahi-resolve -n4 $(echo ${host} | awk -F'=' '{print $2}') 2>&1 | grep -vE 'Failed|Timeout' || exit $?
 done
 
+
 # ensure self-signed certificates are installed correctly (if any)
 [[ -n ${NODE_EXTRA_CA_CERTS} ]] && true | openssl s_client \
-  -connect "${API_HOST}":443 \
+  -connect "$(ip route get 8.8.8.8 | head -1 | awk '{print $7}')":443 \
+  -servername "${API_HOST}" \
   -CAfile "${NODE_EXTRA_CA_CERTS}"
