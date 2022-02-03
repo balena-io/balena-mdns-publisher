@@ -1,4 +1,15 @@
 - commits:
+    - subject: Use local IP for HC
+      hash: 6a3e9ee4bca47c0de05731a441086ee0c740fc6e
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: ab77
+      nested: []
+  version: 1.14.4
+  date: 2022-01-25T23:24:09.706Z
+- commits:
     - subject: Update open-balena-base to 13.0.4
       hash: 0454fe862c4efcf1d0bdab5ce423d31a8ac08589
       body: |
