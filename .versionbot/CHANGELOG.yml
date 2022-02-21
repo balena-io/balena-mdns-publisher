@@ -1,7 +1,72 @@
 - commits:
+    - subject: Update open-balena-base to 13.1.0
+      hash: e3c3c7f8fd41444a4bef583803806a0ac340eda0
+      body: |
+        Update open-balena-base from 13.0.4 to 13.1.0
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Pagan Gazzard
+      nested:
+        - commits:
+            - subject: Update nodejs to 16.14.0 and npm to 8.5.1
+              hash: 96344108de1f79799132f47ad59643658590d582
+              body: ""
+              footer:
+                Change-type: minor
+                change-type: minor
+              author: Pagan Gazzard
+              nested: []
+          version: open-balena-base-13.1.0
+          title: "'Update nodejs to 16.14.0 and npm to 8.5.1'"
+          date: 2022-02-21T16:05:34.829Z
+        - commits:
+            - subject: Avoid cryptic names and rename bcr to registry-proxy
+              hash: c3d6787df9412883b8706f6edf7db80ed885b71f
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Kyle Harding <kyle@balena.io>
+                signed-off-by: Kyle Harding <kyle@balena.io>
+              author: Kyle Harding
+              nested: []
+          version: open-balena-base-13.0.7
+          title: "'Avoid cryptic names and rename bcr to registry-proxy'"
+          date: 2022-02-16T16:48:08.416Z
+        - commits:
+            - subject: Add new balena container registry (bcr) host
+              hash: 67769b8c23c562120aeee32ce38e3f80519370cb
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Kyle Harding <kyle@balena.io>
+                signed-off-by: Kyle Harding <kyle@balena.io>
+              author: Kyle Harding
+              nested: []
+          version: open-balena-base-13.0.6
+          title: "'Add new balena container registry (bcr) host'"
+          date: 2022-02-15T19:56:44.683Z
+        - commits:
+            - subject: Refactor ROOT_CA handling/resolution
+              hash: 2c26140eab961b5f6eac6e69fabfed3f35175dbf
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: ab77
+              nested: []
+          version: open-balena-base-13.0.5
+          title: Refactor ROOT_CA handling
+          date: 2022-02-01T20:10:39.392Z
+  version: 1.14.5
+  title: "'Update open-balena-base to 13.1.0'"
+  date: 2022-02-21T16:29:23.765Z
+- commits:
     - subject: Use local IP for HC
       hash: 6a3e9ee4bca47c0de05731a441086ee0c740fc6e
-      body: ''
+      body: ""
       footer:
         Change-type: patch
         change-type: patch
@@ -22,7 +87,7 @@
         - commits:
             - subject: Update to nodejs 16.13.2 and npm 8.3.0
               hash: 34eb13df1c1132857f1adf8c4f77a41b3f674677
-              body: ''
+              body: ""
               footer:
                 Change-type: patch
                 change-type: patch
@@ -57,7 +122,7 @@
         - commits:
             - subject: Update to nodejs 16.13.1 and npm 8.2.0
               hash: f755bed613e3c18383ba032df6c179be06e5b1d9
-              body: ''
+              body: ""
               footer:
                 Change-type: patch
                 change-type: patch
@@ -93,7 +158,7 @@
         - commits:
             - subject: Install python3 for node-gyp 8.x which is used by npm 8
               hash: 9b42d099d82c8c8249aef3a38ecacbcdb501c15f
-              body: ''
+              body: ""
               footer:
                 Change-type: patch
                 change-type: patch
@@ -116,7 +181,7 @@
         - commits:
             - subject: Update nodejs to 16.13.0 and npm 8.1.1
               hash: ed92e55bd095696e03115761f3c396b72c801a33
-              body: ''
+              body: ""
               footer:
                 Change-type: major
                 change-type: major
@@ -127,7 +192,7 @@
         - commits:
             - subject: Update nodejs to 14.18.1 and npm to 6.14.15
               hash: 613f0a4462227bc8dc2bb16aa91b3306c1c87b16
-              body: ''
+              body: ""
               footer:
                 Change-type: minor
                 change-type: minor
@@ -148,11 +213,9 @@
       author: Akis Kesoglou
       nested:
         - commits:
-            - subject: >-
-                Simplify config by baking the device UUID into the DNS_TLD if
-                available
+            - subject: Simplify config by baking the device UUID into the DNS_TLD if available
               hash: 140aaf311c000963c51f3304a04221d386209c5a
-              body: ''
+              body: ""
               footer:
                 Change-type: patch
                 change-type: patch
@@ -193,24 +256,18 @@
                 + allows balenaMachine(s)/BoB(s) to automatically configure
                 itself (without bob-cli)
 
-                + auto-configuration requires balena-ca and cert-manager to do
-                the heavy lifting prior
+                + auto-configuration requires balena-ca and cert-manager to do the heavy lifting prior
 
-                + corresponding [balena-on-balena
-                PR](https://github.com/balena-io/balena-on-balena/pull/261)
+                + corresponding [balena-on-balena PR](https://github.com/balena-io/balena-on-balena/pull/261)
 
 
-                * refactor confd.service to include both root-ca and
-                host-envvars handling
+                * refactor confd.service to include both root-ca and host-envvars handling
 
-                * add systemd path watcher to restart confd if keys/certs change
-                during runtime
+                * add systemd path watcher to restart confd if keys/certs change during runtime
 
-                * store stack configuration available to all services in a
-                persistent/shared volume (/balena)
+                * store stack configuration available to all services in a persistent/shared volume (/balena)
 
-                * change resolver order to dns => mdns (ipv4) => mdns (ipv6) =>
-                return
+                * change resolver order to dns => mdns (ipv4) => mdns (ipv6) => return
 
                 * configure API key and JOSE/JWT key id
 
@@ -243,8 +300,7 @@
                 * allows dynamic certificate generation and loading within the
                 stack
 
-                * if a (volume|directory) /certs exists, set up a notification
-                to watch
+                * if a (volume|directory) /certs exists, set up a notification to watch
                   for /certs/ca-bundle.pem and update CA certificates/restart confd
               footer:
                 Change-type: patch
@@ -276,8 +332,7 @@
                 * allows dynamic certificate generation and loading within the
                 stack
 
-                * if a (volume|directory) /certs exists, set up a notification
-                to watch
+                * if a (volume|directory) /certs exists, set up a notification to watch
                   for /certs/ca-bundle.pem and update CA certificates/restart confd
               footer:
                 Change-type: patch
@@ -314,7 +369,7 @@
         - commits:
             - subject: Use multi-user.target as the default target
               hash: 9006b9eb301b9a315b7fbde5fe4100681f3f4eac
-              body: ''
+              body: ""
               footer:
                 Change-type: patch
                 change-type: patch
@@ -327,18 +382,17 @@
 - commits:
     - subject: 'patch: Revert "switch to open-balena-base:no-systemd"'
       hash: 722a02c0c9fccbc2e06363fd67fd48200834894e
-      body: ''
+      body: ""
       footer: {}
       author: Thomas Manning
       nested: []
   version: 1.11.1
   date: 2021-08-24T04:10:19.950Z
 - commits:
-    - subject: >-
-        minor: switch to open-balena-base:no-systemd. removed system service
-        file, update readme.
+    - subject: "minor: switch to open-balena-base:no-systemd. removed system service
+        file, update readme."
       hash: 4c12ff59ac10dbf9d1617d71379a697477fce732
-      body: ''
+      body: ""
       footer: {}
       author: Thomas Manning
       nested: []
@@ -357,7 +411,7 @@
         - commits:
             - subject: Use basic.target as the default target
               hash: 8e886caf096ab5559f0e841b25e781549d686ce2
-              body: ''
+              body: ""
               footer:
                 Change-type: patch
                 change-type: patch
@@ -380,7 +434,7 @@
         - commits:
             - subject: Update to debian bullseye
               hash: ab2063d323d09fcc7f9ea86bb8228eab9b543fd0
-              body: ''
+              body: ""
               footer:
                 Change-type: major
                 change-type: major
@@ -393,7 +447,7 @@
 - commits:
     - subject: Correctly handle cases with no IPv6 connectivity
       hash: 2b4f36240bc85e04b33afc301031dacbc51c6cf1
-      body: ''
+      body: ""
       footer:
         Change-type: patch
         change-type: patch
@@ -433,7 +487,7 @@
         - commits:
             - subject: Remove deprecated etcd config
               hash: 00d595b6e7e525c692c522c4e3dca13e5e09015d
-              body: ''
+              body: ""
               footer:
                 Change-type: patch
                 change-type: patch
@@ -493,7 +547,7 @@
         - commits:
             - subject: Update nodejs to 14.17.5
               hash: f53fdc6772da9353cd131053f350f266940997f5
-              body: ''
+              body: ""
               footer:
                 Change-type: patch
                 change-type: patch
@@ -504,11 +558,10 @@
   version: 1.9.13
   date: 2021-08-12T16:32:49.980Z
 - commits:
-    - subject: >-
-        Update open-balena-base to 11.3.7 Update open-balena-base from 11.3.3 to
-        11.3.7
+    - subject: Update open-balena-base to 11.3.7 Update open-balena-base from 11.3.3
+        to 11.3.7
       hash: 2245a0988afbac05bf396c03353bd533862daaea
-      body: ''
+      body: ""
       footer:
         Change-type: patch
         change-type: patch
@@ -556,7 +609,7 @@
         - commits:
             - subject: Update nodejs to 14.17.2
               hash: cc11cc5654ee0bf85af40882a567c9b7fb644f48
-              body: ''
+              body: ""
               footer:
                 Change-type: patch
                 change-type: patch
@@ -567,7 +620,7 @@
         - commits:
             - subject: Delete .github directory
               hash: d4d32ee5b021b1dd8864e2a2285530f1f4a85829
-              body: ''
+              body: ""
               footer:
                 Change-type: patch
                 change-type: patch
@@ -578,7 +631,7 @@
         - commits:
             - subject: Update nodejs to 14.17.1
               hash: e0471dbbe042d4416ad3bba67ea50dcc4565de9f
-              body: ''
+              body: ""
               footer:
                 Change-type: minor
                 change-type: minor
@@ -593,7 +646,7 @@
 - commits:
     - subject: Delete .github directory
       hash: 645fbc696a997e31de761ddf6bb640dbd39d2463
-      body: ''
+      body: ""
       footer:
         Change-type: patch
         change-type: patch
@@ -614,7 +667,7 @@
         - commits:
             - subject: Update nodejs to 14.17.0 and npm to 6.14.13
               hash: d4a35f84c95db475b972aab4ed7781ce47515f39
-              body: ''
+              body: ""
               footer:
                 Change-type: minor
                 change-type: minor
@@ -637,7 +690,7 @@
         - commits:
             - subject: Update nodejs to 14.16.1 and npm to 6.14.12
               hash: 602c54358898ca38005824c748a0682df814d5a8
-              body: ''
+              body: ""
               footer:
                 Change-type: patch
                 change-type: patch
@@ -648,7 +701,7 @@
         - commits:
             - subject: Drop CircleCI
               hash: 35e8f707fac5767b1d85c30d3ad9244caef1efd1
-              body: ''
+              body: ""
               footer:
                 Change-type: patch
                 change-type: patch
@@ -671,7 +724,7 @@
         - commits:
             - subject: Update nodejs to 14.16.0
               hash: ed8a58f5db73244f75d2e10b6b8df9d883247558
-              body: ''
+              body: ""
               footer:
                 Change-type: minor
                 change-type: minor
@@ -694,7 +747,7 @@
         - commits:
             - subject: Update nodejs to 14.15.5 and npm to 6.14.11
               hash: 2e812ae8993ad13b1ac0d7a760e4c45ab8b8bd9d
-              body: ''
+              body: ""
               footer:
                 Change-type: patch
                 change-type: patch
@@ -707,7 +760,7 @@
 - commits:
     - subject: Remove Hedley and Will from CODEOWNERS
       hash: 5dd5b62a107a0fea5a4c7f6901696182ae936cd6
-      body: ''
+      body: ""
       footer:
         Change-type: patch
         change-type: patch
@@ -718,7 +771,7 @@
 - commits:
     - subject: Add .versionbot/CHANGELOG.yml for nested changelogs
       hash: 1f722fc332677f81c610655e24b9b20f382fbb12
-      body: ''
+      body: ""
       footer:
         Change-type: patch
         change-type: patch
@@ -733,7 +786,7 @@
         change-type: patch
       hash: 954711cea811c56fdddabd7c97bd733668823174
       subject: Update open-balena-base to 11.0.4
-  date: '2021-01-13T14:25:01Z'
+  date: 2021-01-13T14:25:01Z
   version: 1.9.2
 - commits:
     - author: Pagan Gazzard
@@ -742,16 +795,16 @@
         change-type: patch
       hash: 3847c8154c8eb71e948851c1580cf9d37c905484
       subject: Update open-balena-base to 11.0.3
-  date: '2020-12-23T18:44:57Z'
+  date: 2020-12-23T18:44:57Z
   version: 1.9.1
 - commits:
     - author: Pagan Gazzard
-      body: ''
+      body: ""
       footers:
         change-type: minor
       hash: f7bc0aa6db5866ed46f8c81f8e951a6b8a294489
       subject: Update open-balena-base to 11.0.2
-  date: '2020-11-20T11:53:37Z'
+  date: 2020-11-20T11:53:37Z
   version: 1.9.0
 - commits:
     - author: Pagan Gazzard
@@ -760,16 +813,16 @@
         change-type: minor
       hash: f81223eb8bafbb8b4ef0dd59c8c43cdb36cfefa8
       subject: Update open-balena-base to 11.0.0
-  date: '2020-10-28T13:57:16Z'
+  date: 2020-10-28T13:57:16Z
   version: 1.8.0
 - commits:
     - author: Pagan Gazzard
-      body: ''
+      body: ""
       footers:
         change-type: patch
       hash: 068ea44fcf927506e7870759dfa1b10aa2d8d634
       subject: Update dependencies
-  date: '2020-07-28T16:51:18Z'
+  date: 2020-07-28T16:51:18Z
   version: 1.7.9
 - commits:
     - author: Pagan Gazzard
@@ -778,7 +831,7 @@
         change-type: patch
       hash: bf957e8a666bcb89b58a348d7f965f80f886ddd8
       subject: Update open-balena-base to 9.4.3
-  date: '2020-07-28T15:49:16Z'
+  date: 2020-07-28T15:49:16Z
   version: 1.7.8
 - commits:
     - author: Pagan Gazzard
@@ -787,7 +840,7 @@
         change-type: patch
       hash: f83e318842d2e0250f8c21a552bb612f8b54336b
       subject: Update open-balena-base to 9.4.2
-  date: '2020-07-06T14:17:56Z'
+  date: 2020-07-06T14:17:56Z
   version: 1.7.7
 - commits:
     - author: Pagan Gazzard
@@ -796,7 +849,7 @@
         change-type: patch
       hash: 85ba4a8cede4eb67496982ab73e485144a1f173d
       subject: Update open-balena-base to 9.2.4
-  date: '2020-05-05T09:38:07Z'
+  date: 2020-05-05T09:38:07Z
   version: 1.7.6
 - commits:
     - author: Pagan Gazzard
@@ -805,7 +858,7 @@
         change-type: patch
       hash: 487596c6c51b80cc8649a9205e1ef9f2390db380
       subject: Update open-balena-base to 9.2.2
-  date: '2020-04-09T16:02:05Z'
+  date: 2020-04-09T16:02:05Z
   version: 1.7.5
 - commits:
     - author: Pagan Gazzard
@@ -814,7 +867,7 @@
         change-type: patch
       hash: 44f2a59f8c00d3c32e49089965d8f10bc4db8117
       subject: Update open-balena-base to 9.2.1
-  date: '2020-02-20T22:38:28Z'
+  date: 2020-02-20T22:38:28Z
   version: 1.7.4
 - commits:
     - author: Pagan Gazzard
@@ -823,7 +876,7 @@
         change-type: patch
       hash: 8d82a11879e050e8b927e73afbcac360b31817d1
       subject: Update open-balena-base to 9.2.0
-  date: '2020-02-13T17:20:42Z'
+  date: 2020-02-13T17:20:42Z
   version: 1.7.3
 - commits:
     - author: Pagan Gazzard
@@ -832,7 +885,7 @@
         change-type: patch
       hash: f12270bd783f235bcd7c3fb771e7116716f9eb8f
       subject: Update open-balena-base to 9.0.5
-  date: '2020-01-20T14:24:12Z'
+  date: 2020-01-20T14:24:12Z
   version: 1.7.2
 - commits:
     - author: Pagan Gazzard
@@ -841,7 +894,7 @@
         change-type: patch
       hash: 01890622cf0a1838d17c2f2f6b6f788a1a63be88
       subject: Update open-balena-base to 9.0.3
-  date: '2019-12-24T15:39:36Z'
+  date: 2019-12-24T15:39:36Z
   version: 1.7.1
 - commits:
     - author: Pagan Gazzard
@@ -850,7 +903,7 @@
         change-type: minor
       hash: 81ee392e60e4111ca7d9f20163cd1cac1e3c4f96
       subject: Update open-balena-base to 9.0.0
-  date: '2019-11-07T16:22:26Z'
+  date: 2019-11-07T16:22:26Z
   version: 1.7.0
 - commits:
     - author: Pagan Gazzard
@@ -859,27 +912,27 @@
         change-type: patch
       hash: 195e2d8c527838f392ac9fbb8802d6edbe031060
       subject: Update open-balena-base to 8.0.3
-  date: '2019-08-20T14:10:50Z'
+  date: 2019-08-20T14:10:50Z
   version: 1.6.6
 - commits:
     - author: Heds Simons
-      body: ''
+      body: ""
       footers:
         change-type: patch
         signed-off-by: Heds Simons <heds@balena.io>
       hash: ef45b2a5176b3b9b77a199c01ea50b86c7cddaec
-      subject: 'npm: Fix audit vulnerabilities'
-  date: '2019-08-13T09:14:50Z'
+      subject: "npm: Fix audit vulnerabilities"
+  date: 2019-08-13T09:14:50Z
   version: 1.6.5
 - commits:
     - author: Matthew McGinn
-      body: ''
+      body: ""
       footers:
         change-type: patch
         signed-off-by: Matthew McGinn <matthew@balena.io>
       hash: cd1a5eb6d813d42e66a0005b3136245dd46b4cad
-      subject: 'gitignore: start ignoring stuff'
-  date: '2019-08-08T11:21:41Z'
+      subject: "gitignore: start ignoring stuff"
+  date: 2019-08-08T11:21:41Z
   version: 1.6.4
 - commits:
     - author: Pagan Gazzard
@@ -888,17 +941,17 @@
         change-type: patch
       hash: 5223dbe26e7e06901d1bd7969b968b92a89a819f
       subject: Update open-balena-base to 8.0.2
-  date: '2019-08-06T15:37:59Z'
+  date: 2019-08-06T15:37:59Z
   version: 1.6.3
 - commits:
     - author: Heds Simons
-      body: ''
+      body: ""
       footers:
         change-type: patch
         signed-off-by: Heds Simons <heds@balena.io>
       hash: c3b3bb078dbaaa957d0b345ea2071dafe8019a2a
-      subject: 'cleanup: Clean up code/README/LICENSE for public exposure'
-  date: '2019-07-23T14:55:09Z'
+      subject: "cleanup: Clean up code/README/LICENSE for public exposure"
+  date: 2019-07-23T14:55:09Z
   version: 1.6.2
 - commits:
     - author: Pagan Gazzard
@@ -907,7 +960,7 @@
         change-type: patch
       hash: f49ec183b91ff538ac7a8b30059917b82d49928e
       subject: Update open-balena-base to 8.0.1
-  date: '2019-07-17T15:50:30Z'
+  date: 2019-07-17T15:50:30Z
   version: 1.6.1
 - commits:
     - author: Pagan Gazzard
@@ -916,7 +969,7 @@
         change-type: minor
       hash: 96d63b1719e5e85dc61688d901b889004b77a602
       subject: Update open-balena-base to 8.0.0
-  date: '2019-07-15T15:04:06Z'
+  date: 2019-07-15T15:04:06Z
   version: 1.6.0
 - commits:
     - author: Heds Simons
@@ -925,11 +978,11 @@
         public device URL TLDs based on those accessible.
       footers:
         change-type: minor
-        connects-to: '#30'
+        connects-to: "#30"
         signed-off-by: Heds Simons <heds@balena.io>
       hash: 8043a226cc78d748884b13c6ed49ce30c7bcaccc
-      subject: 'devices: Publish/unpublish public device URL'
-  date: '2019-06-25T09:42:28Z'
+      subject: "devices: Publish/unpublish public device URL"
+  date: 2019-06-25T09:42:28Z
   version: 1.5.0
 - commits:
     - author: Pagan Gazzard
@@ -938,7 +991,7 @@
         change-type: patch
       hash: 754541330fa0dd1b9563068b348d72c5071f7f23
       subject: Update open-balena-base to 7.2.2
-  date: '2019-06-20T15:16:16Z'
+  date: 2019-06-20T15:16:16Z
   version: 1.4.1
 - commits:
     - author: Pagan Gazzard
@@ -947,18 +1000,18 @@
         change-type: minor
       hash: be318a55b0eea1a839348b573eeddf3bf772c1c8
       subject: Update open-balena-base to 7.2.1
-  date: '2019-06-07T11:32:57Z'
+  date: 2019-06-07T11:32:57Z
   version: 1.4.0
 - commits:
     - author: Heds Simons
-      body: ''
+      body: ""
       footers:
         change-type: patch
-        connects-to: '#20'
+        connects-to: "#20"
         signed-off-by: Heds Simons <heds@balena.io>
       hash: 88db6d4996ad2254b7cfbbbc0d1ff9f680293ac8
-      subject: 'networking: Allow the use of non-host networking'
-  date: '2019-04-30T12:42:41Z'
+      subject: "networking: Allow the use of non-host networking"
+  date: 2019-04-30T12:42:41Z
   version: 1.3.2
 - commits:
     - author: Heds Simons
@@ -970,8 +1023,8 @@
         change-type: patch
         signed-off-by: Heds Simons <heds@balena.io>
       hash: 73297301d975751993d1fb94deb959c8d08139b4
-      subject: 'build: Empty commit to bump MS build correctly'
-  date: '2019-04-29T13:15:37Z'
+      subject: "build: Empty commit to bump MS build correctly"
+  date: 2019-04-29T13:15:37Z
   version: 1.3.1
 - commits:
     - author: Heds Simons
@@ -981,55 +1034,55 @@
         named interface be passed.
       footers:
         change-type: minor
-        connects-to: '#11'
+        connects-to: "#11"
         signed-off-by: Heds Simons <heds@balena.io>
       hash: 64b26b3d175ff238d586029afbd3afa7cdf5e460
-      subject: 'typescript: Move publisher to TypeScript'
-  date: '2019-04-18T09:55:13Z'
+      subject: "typescript: Move publisher to TypeScript"
+  date: 2019-04-18T09:55:13Z
   version: 1.3.0
 - commits:
     - author: Heds Simons
-      body: ''
+      body: ""
       footers:
         change-type: patch
-        connects-to: '#18'
+        connects-to: "#18"
         signed-off-by: Heds Simons <heds@balena.io>
       hash: ddfceb9bdd51a14eb344b8dd1b8afcfb7dffab03
-      subject: 'subdomains: Allow list of advertised subdomains via envvar'
-  date: '2019-04-03T12:17:23Z'
+      subject: "subdomains: Allow list of advertised subdomains via envvar"
+  date: 2019-04-03T12:17:23Z
   version: 1.2.1
 - commits:
     - author: Heds Simons
-      body: ''
+      body: ""
       footers:
         change-type: minor
-        connects-to: '#16'
+        connects-to: "#16"
         signed-off-by: Heds Simons <heds@balena.io>
       hash: 1e495d2c5dbdae78b7dfc82c8fb2d3ce1c67ed78
-      subject: 'open-balena-base: Update open-balena-base to v7.0.0'
-  date: '2019-03-14T17:12:46Z'
+      subject: "open-balena-base: Update open-balena-base to v7.0.0"
+  date: 2019-03-14T17:12:46Z
   version: 1.2.0
 - commits:
     - author: Heds Simons
-      body: ''
+      body: ""
       footers:
         change-type: minor
-        connects-to: '#14'
+        connects-to: "#14"
         signed-off-by: Heds Simons <heds@balena.io>
       hash: f5c4dc87e2988be90b509e0c14317eb5ca908307
-      subject: 'open-balena-base: Update open-balena-base to v6.0.0'
-  date: '2019-03-13T10:20:08Z'
+      subject: "open-balena-base: Update open-balena-base to v6.0.0"
+  date: 2019-03-13T10:20:08Z
   version: 1.1.0
 - commits:
     - author: Heds Simons
-      body: ''
+      body: ""
       footers:
         change-type: patch
-        connects-to: '#12'
+        connects-to: "#12"
         signed-off-by: Heds Simons <heds@balena.io>
       hash: 99a4b75a80a977ef7b6c3158f6d3f83855342c83
-      subject: 'codeowners: Add @hedss, @wrboyce and @Page-'
-  date: '2019-03-11T10:15:57Z'
+      subject: "codeowners: Add @hedss, @wrboyce and @Page-"
+  date: 2019-03-11T10:15:57Z
   version: 1.0.6
 - commits:
     - author: Heds Simons
@@ -1040,22 +1093,22 @@
         * Removes CircleCI build
       footers:
         change-type: patch
-        connects-to: '#9'
+        connects-to: "#9"
         signed-off-by: Heds Simons <heds@resin.io>
       hash: b06ebc32b932be3715047947b826b599df72a83a
-      subject: 'addresses: Add the `resin-image-maker.img` prefix'
-  date: '2019-01-14T12:29:19Z'
+      subject: "addresses: Add the `resin-image-maker.img` prefix"
+  date: 2019-01-14T12:29:19Z
   version: 1.0.5
 - commits:
     - author: Heds Simons
-      body: ''
+      body: ""
       footers:
         change-type: patch
-        connects-to: '#7'
+        connects-to: "#7"
         signed-off-by: Heds Simons <heds@balena.io>
       hash: 55ee24b98ce9fe7c74881f194ec20984811b8d4e
-      subject: 'base: Update base to v4.5.0 of `open-balena-base`'
-  date: '2018-10-26T13:29:34Z'
+      subject: "base: Update base to v4.5.0 of `open-balena-base`"
+  date: 2018-10-26T13:29:34Z
   version: 1.0.4
 - commits:
     - author: Heds Simons
@@ -1065,11 +1118,11 @@
         before those published on the local subnet.
       footers:
         change-type: patch
-        connects-to: '#5'
+        connects-to: "#5"
         signed-off-by: Heds Simons <heds@resin.io>
       hash: 47ac99d3a5700bef48b926590f9122e17188d12a
-      subject: 'dns: Ensure DNS is prioritised over MDNS'
-  date: '2018-09-28T12:43:34Z'
+      subject: "dns: Ensure DNS is prioritised over MDNS"
+  date: 2018-09-28T12:43:34Z
   version: 1.0.3
 - commits:
     - author: Heds Simons
@@ -1078,20 +1131,20 @@
         on resinOS devices when run as a service.
       footers:
         change-type: patch
-        connects-to: '#3'
+        connects-to: "#3"
         signed-off-by: Heds Simons <heds@resin.io>
       hash: c67842bdbf4473bcc7ab896d1a75133152d12362
       subject: "logging: Enable\tlogging output to also go to console"
-  date: '2018-09-25T11:28:35Z'
+  date: 2018-09-25T11:28:35Z
   version: 1.0.2
 - commits:
     - author: Heds Simons
-      body: ''
+      body: ""
       footers:
         change-type: patch
-        connects-to: '#1'
+        connects-to: "#1"
         signed-off-by: Heds Simons <heds@resin.io>
       hash: 925b90f2194079eba470563c5beafb5f086568c1
-      subject: 'npm: Add `package-lock.json` file'
-  date: '2018-09-19T08:22:03Z'
+      subject: "npm: Add `package-lock.json` file"
+  date: 2018-09-19T08:22:03Z
   version: 1.0.1
