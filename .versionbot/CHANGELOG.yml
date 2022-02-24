@@ -1,4 +1,16 @@
 - commits:
+    - subject: Fix health-check to work with public DNS configs
+      hash: b00d5a9d49cf081d5b0d7c4192d73339019405e1
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: ab77
+      nested: []
+  version: 1.14.6
+  title: "'Fix health-check to work with public DNS configs'"
+  date: 2022-02-24T00:12:11.619Z
+- commits:
     - subject: Update open-balena-base to 13.1.0
       hash: e3c3c7f8fd41444a4bef583803806a0ac340eda0
       body: |
