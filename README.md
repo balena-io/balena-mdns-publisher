@@ -58,13 +58,13 @@ the service container:
         - /run/dbus/system_bus_socket:/host/run/dbus/system_bus_socket
 
 Alternatively you may change the in-container location of the DBUS socket, but you
-*must* set `DBUS_SYSTEM_BUS_ADDRESS` envvar to the same location value.
+*must* set `DBUS_SESSION_BUS_ADDRESS` envvar to the same location value.
 
 
 #### balenaOS Device
 
 Should the target be a balenaOS device, then the following section should also be included
-to ensure that the Supervisor correctly exposes the relevant information to the service:
+to ensure that the DBUS socket is mapped and environment variables is set:
 
 	 labels:
 		io.balena.features.dbus: '1'
@@ -79,13 +79,9 @@ execution to allow it to function correctly. These are
 * `MDNS_TLD` - This is the full Top Level Domain of the host being published
 * `MDNS_SUBDOMAINS` - An array of subdomains to publish host addresses for
 * `INTERFACE` - The name of the host network interface to publish the subdomain addresses
-  too. Under balenaOS, if this is not set, the Supervisor API will be used to determine
-  the interface to use, and therefore is not required. If this *is* set, it will override
-  the returned default interface
-* ⚠️ `DBUS_SYSTEM_BUS_ADDRESS` (optional) - For generic Linux hosts this must always be set
-  to the location of the system socket (e.g. `unix:path=/var/run/dbus/system_bus_socket`)
-  and must be **unset** for balenaOS devices to prevent collisions with `systemd` running
-  on the host OS
+  too. If this *is* set, it will override the returned default interface
+* `DBUS_SESSION_BUS_ADDRESS` - This must always be set to `unix:path=/host/run/dbus/system_bus_socket'`
+  (unless the DBUS target is located elsewhere)
 * `MDNS_API_TOKEN` (optional) - Should Public URL exposure be required, then the shared
   API token for the Proxy service should be set using this key. The API will be queried
   every 20 seconds, and any new device with an exposed public URL will have its UUID
@@ -123,5 +119,6 @@ under balenaOS:
             MDNS_SUBDOMAINS: >-
                 ["admin", "api", ...]
             MDNS_API_TOKEN: 1234567890abcdef
+            DBUS_SESSION_BUS_ADDRESS: 'unix:path=/host/run/dbus/system_bus_socket'
             BALENA_ROOT_CA: >-
                 1234567890abcdef
