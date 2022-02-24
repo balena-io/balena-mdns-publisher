@@ -1,4 +1,16 @@
 - commits:
+    - subject: Check for non-zero file instead
+      hash: ce113a89cbd21f73e6773c5207ddac39c4df6987
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: ab77
+      nested: []
+  version: 1.14.7
+  title: "'Check for non-zero file instead'"
+  date: 2022-02-24T00:36:32.628Z
+- commits:
     - subject: Fix health-check to work with public DNS configs
       hash: b00d5a9d49cf081d5b0d7c4192d73339019405e1
       body: ""
