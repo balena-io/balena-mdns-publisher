@@ -14,7 +14,7 @@ done
 
 haproxy="$(ip route get 8.8.8.8 | head -1 | awk '{print $7}'):443"
 
-if [[ -n ${NODE_EXTRA_CA_CERTS} ]]; then
+if [[ -s ${NODE_EXTRA_CA_CERTS} ]]; then
     # ensures self-signed certificates are installed correctly (if any)
     true | openssl s_client -connect "${haproxy}" \
       -servername "${API_HOST}" \
