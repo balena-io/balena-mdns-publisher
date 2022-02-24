@@ -12,9 +12,14 @@ for host in $(env \
     avahi-resolve -n4 $(echo ${host} | awk -F'=' '{print $2}') 2>&1 | grep -vE 'Failed|Timeout' || exit $?
 done
 
+haproxy="$(ip route get 8.8.8.8 | head -1 | awk '{print $7}'):443"
 
-# ensure self-signed certificates are installed correctly (if any)
-[[ -n ${NODE_EXTRA_CA_CERTS} ]] && true | openssl s_client \
-  -connect "$(ip route get 8.8.8.8 | head -1 | awk '{print $7}')":443 \
-  -servername "${API_HOST}" \
-  -CAfile "${NODE_EXTRA_CA_CERTS}"
+if [[ -n ${NODE_EXTRA_CA_CERTS} ]]; then
+    # ensures self-signed certificates are installed correctly (if any)
+    true | openssl s_client -connect "${haproxy}" \
+      -servername "${API_HOST}" \
+      -CAfile "${NODE_EXTRA_CA_CERTS}"
+else
+    # public DNS configuration (e.g. LetsEncrypt)
+    true | openssl s_client -connect "${haproxy}" -servername "${API_HOST}"
+fi
