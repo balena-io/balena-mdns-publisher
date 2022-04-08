@@ -1,4 +1,19 @@
 - commits:
+    - subject: Update open-balena-base to 13.2.3 Update open-balena-base from 13.2.1
+        to 13.2.3
+      hash: a083ea49da64eb49548b0b748a8199a24a9a3525
+      body: |
+        * revert to DBUS_SESSION_BUS_ADDRESS
+        * allows deployment to vanilla dockerd
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: ab77
+      nested: []
+  version: 1.15.0
+  title: "'Use DBUS_SESSION_BUS_ADDRESS instead of system'"
+  date: 2022-04-08T19:41:24.128Z
+- commits:
     - subject: Update open-balena-base to 13.2.1
       hash: 19f88a70536822bc46ea348fcfaa6b0c180e3c90
       body: |
