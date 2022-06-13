@@ -21,21 +21,21 @@
   },
   "private": true,
   "dependencies": {
-    "balena-sdk": "^12.33.0",
-    "bluebird": "^3.7.2",
-    "dbus-native": "^0.4.0",
-    "lodash": "^4.17.21",
-    "request": "^2.88.2",
-    "request-promise": "^4.2.6"
+    "balena-sdk": "12.33.0",
+    "bluebird": "3.7.2",
+    "dbus-native": "0.4.0",
+    "lodash": "4.17.21",
+    "request": "2.88.2",
+    "request-promise": "4.2.6"
   },
   "devDependencies": {
-    "@balena/lint": "^6.1.1",
-    "@types/lodash": "^4.14.176",
-    "@types/node": "^16.11.6",
-    "@types/request-promise": "^4.1.48",
-    "husky": "^4.3.8",
-    "lint-staged": "^11.2.6",
-    "typescript": "^4.4.4"
+    "@balena/lint": "6.1.1",
+    "@types/lodash": "4.14.176",
+    "@types/node": "16.11.6",
+    "@types/request-promise": "4.1.48",
+    "husky": "4.3.8",
+    "lint-staged": "11.2.6",
+    "typescript": "4.4.4"
   },
   "engines": {
     "node": "^16.13.0",
