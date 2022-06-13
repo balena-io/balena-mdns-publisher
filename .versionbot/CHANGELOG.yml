@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update typescript from 4.4.4 to 4.7.3
+      hash: 6500e71b08479ca4a76d34f40ec9c2b6109c3604
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 1.15.7
+  title: "'Update typescript from 4.4.4 to 4.7.3'"
+  date: 2022-06-13T21:01:14.251Z
+- commits:
     - subject: Update husky from 4.3.8 to 8.0.1
       hash: 60c70af169ef478c246f79b72a0e67bea5cbf7ef
       body: ""
