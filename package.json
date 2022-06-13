@@ -1,5 +1,5 @@
 {
-  "version": "1.15.5",
+  "version": "1.15.6",
   "scripts": {
     "build": "tsc",
     "prettify": "balena-lint --fix src/ typings/",
@@ -35,7 +35,7 @@
     "@types/request-promise": "4.1.48",
     "husky": "8.0.1",
     "lint-staged": "11.2.6",
-    "typescript": "4.4.4"
+    "typescript": "4.7.3"
   },
   "engines": {
     "node": "^16.13.0",
@@ -53,6 +53,6 @@
     ]
   },
   "versionist": {
-    "publishedAt": "2022-06-13T19:00:30.977Z"
+    "publishedAt": "2022-06-13T19:42:31.810Z"
   }
 }
