@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update husky from 4.3.8 to 8.0.1
+      hash: 60c70af169ef478c246f79b72a0e67bea5cbf7ef
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 1.15.6
+  title: "'Update husky from 4.3.8 to 8.0.1'"
+  date: 2022-06-13T19:42:31.571Z
+- commits:
     - subject: Update @types/node from 16.11.6 to 16.11.39
       hash: 8ea71ce1b17750d6b5bc5ddb3757de4599b5688c
       body: ""
