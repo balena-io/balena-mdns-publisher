@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update @types/node from 16.11.6 to 16.11.39
+      hash: 8ea71ce1b17750d6b5bc5ddb3757de4599b5688c
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 1.15.5
+  title: "'Update @types/node from 16.11.6 to 16.11.39'"
+  date: 2022-06-13T19:00:30.749Z
+- commits:
     - subject: Update @types/lodash from 4.14.176 to 4.14.182
       hash: e9e426bb5ee5d1d76923eed7c0693b1673529f6b
       body: ""
