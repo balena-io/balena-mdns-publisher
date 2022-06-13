@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update lint-staged from 11.2.6 to 13.0.1
+      hash: 0132889771ba7f15a9ab3ac1922933e087e7db56
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 1.15.8
+  title: "'Update lint-staged from 11.2.6 to 13.0.1'"
+  date: 2022-06-13T22:17:53.919Z
+- commits:
     - subject: Update typescript from 4.4.4 to 4.7.3
       hash: 6500e71b08479ca4a76d34f40ec9c2b6109c3604
       body: ""
