@@ -1,4 +1,24 @@
 - commits:
+    - subject: Update balena/open-balena-base from v13.3.1 to v13.3.2
+      hash: 6274943ea044c8c35bd7b79a4c6f9a3ef296ddce
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+    - subject: Update Pin dependencies
+      hash: fd240a82a0bc8aa53bb9f0abc6206b6d23e36fc7
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 1.15.3
+  title: "'Update balena/open-balena-base from v13.3.1 to v13.3.2'"
+  date: 2022-06-13T16:49:57.122Z
+- commits:
     - subject: Update open-balena-base to 13.3.1
       hash: e180400b3f4a77f2d600d9daeebedaf97d97224c
       body: |
