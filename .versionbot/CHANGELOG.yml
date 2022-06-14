@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update @balena/lint from 6.1.1 to 6.2.0
+      hash: e58699cd9ccbf72b0bc7cd900c9100b2fb9c7683
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 1.15.9
+  title: "'Update @balena/lint from 6.1.1 to 6.2.0'"
+  date: 2022-06-13T23:27:42.341Z
+- commits:
     - subject: Update lint-staged from 11.2.6 to 13.0.1
       hash: 0132889771ba7f15a9ab3ac1922933e087e7db56
       body: ""
