@@ -1,4 +1,19 @@
 - commits:
+    - subject: Update dependency typescript to 4.7.4
+      hash: 224e042cf439d117aa9a1519fb72669d6d206e78
+      body: |
+        Update typescript to 4.7.4
+
+        Update typescript from 4.7.3 to 4.7.4
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 1.15.12
+  title: "'Update dependency typescript to 4.7.4'"
+  date: 2022-07-12T04:17:59.735Z
+- commits:
     - subject: Update dependency lint-staged to 13.0.3
       hash: e0b9a266f4ae68f4e24acca1543e314d58eb613f
       body: |
