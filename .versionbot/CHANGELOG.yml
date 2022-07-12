@@ -1,4 +1,19 @@
 - commits:
+    - subject: Update dependency lint-staged to 13.0.3
+      hash: e0b9a266f4ae68f4e24acca1543e314d58eb613f
+      body: |
+        Update lint-staged to 13.0.3
+
+        Update lint-staged from 13.0.1 to 13.0.3
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 1.15.11
+  title: "'Update dependency lint-staged to 13.0.3'"
+  date: 2022-07-12T02:42:21.967Z
+- commits:
     - subject: Update dependency @types/node to 16.11.43
       hash: c8bcc000b34a0e89e395c0f50d0a26447a9f501d
       body: |
