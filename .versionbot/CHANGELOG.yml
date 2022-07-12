@@ -1,4 +1,19 @@
 - commits:
+    - subject: Update dependency @types/node to 16.11.43
+      hash: c8bcc000b34a0e89e395c0f50d0a26447a9f501d
+      body: |
+        Update @types/node to 16.11.43
+
+        Update @types/node from 16.11.39 to 16.11.43
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 1.15.10
+  title: "'Update dependency @types/node to 16.11.43'"
+  date: 2022-07-12T00:54:46.166Z
+- commits:
     - subject: Update @balena/lint from 6.1.1 to 6.2.0
       hash: e58699cd9ccbf72b0bc7cd900c9100b2fb9c7683
       body: ""
