@@ -1,4 +1,19 @@
 - commits:
+    - subject: Update dependency @types/node to 16.11.50
+      hash: 59c4f16ff085199a83d560c8e07bbef5c212a11a
+      body: |
+        Update @types/node to 16.11.50
+
+        Update @types/node from 16.11.43 to 16.11.50
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 1.15.15
+  title: "'Update dependency @types/node to 16.11.50'"
+  date: 2022-08-19T18:13:41.113Z
+- commits:
     - subject: Update dependency @types/lodash to 4.14.183
       hash: 748a6a4ddd1c2bae10fc09966700c1cf9f86d670
       body: |
