@@ -31,7 +31,7 @@
   "devDependencies": {
     "@balena/lint": "6.2.0",
     "@types/lodash": "4.14.184",
-    "@types/node": "16.11.50",
+    "@types/node": "16.11.55",
     "@types/request-promise": "4.1.48",
     "husky": "8.0.1",
     "lint-staged": "13.0.3",
