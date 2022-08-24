@@ -1,4 +1,19 @@
 - commits:
+    - subject: Update balena/open-balena-base Docker tag to v13.5.1
+      hash: 595fb3f37ab0a528525dcbe257be58791c06e0d8
+      body: |
+        Update balena/open-balena-base to 13.5.1
+
+        Update balena/open-balena-base from 13.4.0 to 13.5.1
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: Renovate Bot
+      nested: []
+  version: 1.16.0
+  title: "'Update balena/open-balena-base Docker tag to v13.5.1'"
+  date: 2022-08-24T00:59:34.835Z
+- commits:
     - subject: Update dependency @types/lodash to 4.14.184
       hash: 8d7718c2cfc2e37d2f786133cc89b0dbd8136bf5
       body: |
