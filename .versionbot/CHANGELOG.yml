@@ -1,4 +1,19 @@
 - commits:
+    - subject: Update dependency @types/node to 16.11.58
+      hash: c64a8d870d095150a115ce0a99d5c511f84bf7d4
+      body: |
+        Update @types/node to 16.11.58
+
+        Update @types/node from 16.11.56 to 16.11.58
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 1.16.4
+  title: "'Bump json-schema from 0.2.3 to 0.4.0'"
+  date: 2022-09-08T18:12:15.836Z
+- commits:
     - subject: Update dependency typescript to 4.8.3
       hash: 5de7dc6f5ccc6b09bb5764ef13e06f4e863c35ff
       body: |
