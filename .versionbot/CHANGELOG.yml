@@ -1,4 +1,19 @@
 - commits:
+    - subject: Update dependency typescript to 4.8.3
+      hash: 5de7dc6f5ccc6b09bb5764ef13e06f4e863c35ff
+      body: |
+        Update typescript to 4.8.3
+
+        Update typescript from 4.7.4 to 4.8.3
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 1.16.3
+  title: "'Update dependency typescript to 4.8.3'"
+  date: 2022-09-08T17:33:51.945Z
+- commits:
     - subject: Update dependency @types/node to 16.11.56
       hash: c9dd4af61eee346cffecb12ed8911a8dffd0070a
       body: |
