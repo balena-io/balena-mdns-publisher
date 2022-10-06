@@ -1,4 +1,19 @@
 - commits:
+    - subject: Update balena/open-balena-base Docker tag to v13.5.2
+      hash: 343bdc81f97b3d110210f42671658802bb6df866
+      body: |
+        Update balena/open-balena-base to 13.5.2
+
+        Update balena/open-balena-base from 13.5.1 to 13.5.2
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 1.16.10
+  title: ""
+  date: 2022-10-06T22:06:26.338Z
+- commits:
     - subject: Switch to Flowzone
       hash: 856fe617a9415d510d631e33143be0b0f8a77d54
       body: ""
