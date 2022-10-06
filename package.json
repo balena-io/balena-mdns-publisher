@@ -1,10 +1,13 @@
 {
+  "name": "balena-mdns-publisher",
   "version": "1.16.8",
   "scripts": {
     "build": "tsc",
     "prettify": "balena-lint --fix src/ typings/",
     "lint": "balena-lint src/ typings/ && tsc --noEmit",
-    "start": "node build/app.js"
+    "start": "node build/app.js",
+    "test": "true",
+    "prepare": "node -e \"try { require('husky').install() } catch (e) {if (e.code !== 'MODULE_NOT_FOUND') throw e}\""
   },
   "author": "Heds Simons <heds@balena.io>",
   "repository": {
@@ -33,7 +36,7 @@
     "@types/lodash": "4.14.185",
     "@types/node": "16.11.62",
     "@types/request-promise": "4.1.48",
-    "husky": "8.0.1",
+    "husky": "^8.0.1",
     "lint-staged": "13.0.3",
     "typescript": "4.8.3"
   },
