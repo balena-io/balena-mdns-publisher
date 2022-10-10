@@ -1,4 +1,19 @@
 - commits:
+    - subject: Update dependency @types/node to 16.11.65
+      hash: 0c1de2a8b009ab1bd983fe0635ccad96d6e1c8e1
+      body: |
+        Update @types/node to 16.11.65
+
+        Update @types/node from 16.11.64 to 16.11.65
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 1.16.14
+  title: ""
+  date: 2022-10-10T21:56:44.414Z
+- commits:
     - subject: Update dependency typescript to 4.8.4
       hash: 8ead92cd21ffc2ca5e1085eed20c90e016871af4
       body: |
