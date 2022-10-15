@@ -1,4 +1,19 @@
 - commits:
+    - subject: Update dependency @types/node to 16.11.66
+      hash: 11df2a1d1ff3b48242f6846a1a593a8e6288c801
+      body: |
+        Update @types/node to 16.11.66
+
+        Update @types/node from 16.11.65 to 16.11.66
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 1.17.1
+  title: ""
+  date: 2022-10-15T21:56:41.679Z
+- commits:
     - subject: Update balena/open-balena-base Docker tag to v13.6.0
       hash: 9cb34b1879273f0b7cbe3264857c47e00824df50
       body: |
