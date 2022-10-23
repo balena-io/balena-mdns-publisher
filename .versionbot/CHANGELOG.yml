@@ -1,4 +1,19 @@
 - commits:
+    - subject: Update dependency @types/node to 16.18.0
+      hash: bebaa5d1615ff9c15be5d2b859669bcf82797814
+      body: |
+        Update @types/node to 16.18.0
+
+        Update @types/node from 16.11.67 to 16.18.0
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 1.17.3
+  title: ""
+  date: 2022-10-23T19:54:30.448Z
+- commits:
     - subject: Update dependency @types/node to 16.11.67
       hash: dbbbb1f10a8605d84fd5c34032da98d2036bb48d
       body: |
