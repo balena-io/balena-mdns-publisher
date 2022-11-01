@@ -1,4 +1,19 @@
 - commits:
+    - subject: Update dependency @types/lodash to 4.14.187
+      hash: 8180eb2e03c46971b8808269af5ef8974bc722e9
+      body: |
+        Update @types/lodash to 4.14.187
+
+        Update @types/lodash from 4.14.186 to 4.14.187
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 1.18.1
+  title: ""
+  date: 2022-11-01T02:07:04.452Z
+- commits:
     - subject: Update open-balena-base to 14.0.0
       hash: 2dcb16b736c96463735ca5812234edfd4fe77154
       body: |
