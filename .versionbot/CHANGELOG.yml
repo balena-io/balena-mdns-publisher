@@ -1,4 +1,19 @@
 - commits:
+    - subject: Update dependency @types/lodash to 4.14.188
+      hash: 85f2986fde2a7aaf3b0b14d71efd958d90e0a8de
+      body: |
+        Update @types/lodash to 4.14.188
+
+        Update @types/lodash from 4.14.187 to 4.14.188
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 1.18.2
+  title: ""
+  date: 2022-11-04T15:35:27.722Z
+- commits:
     - subject: Update dependency @types/lodash to 4.14.187
       hash: 8180eb2e03c46971b8808269af5ef8974bc722e9
       body: |
