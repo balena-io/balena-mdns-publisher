@@ -32,7 +32,7 @@
     "request-promise": "4.2.6"
   },
   "devDependencies": {
-    "@balena/lint": "6.2.0",
+    "@balena/lint": "6.2.1",
     "@types/lodash": "4.14.188",
     "@types/node": "^18.11.7",
     "@types/request-promise": "4.1.48",
