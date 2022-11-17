@@ -1,4 +1,19 @@
 - commits:
+    - subject: Update npm to 9.1.1
+      hash: d5ac32fc4325d63b7dd09a5902092853659f0800
+      body: |
+        Update npm to 9.1.1
+
+        Update npm from 8.19.3 to 9.1.1
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: Renovate Bot
+      nested: []
+  version: 1.19.0
+  title: ""
+  date: 2022-11-17T16:17:07.085Z
+- commits:
     - subject: Update balena/open-balena-base Docker tag to v14.0.1
       hash: 545e9ed7228135595df42bbc9fdf58111630065f
       body: |
