@@ -1,4 +1,19 @@
 - commits:
+    - subject: Update dependency @types/lodash to 4.14.191
+      hash: 9dcf2560d30bfe68a197771b09683d811b0a550e
+      body: |
+        Update @types/lodash to 4.14.191
+
+        Update @types/lodash from 4.14.190 to 4.14.191
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 1.20.3
+  title: ""
+  date: 2022-12-08T22:55:01.485Z
+- commits:
     - subject: Update balena/open-balena-base Docker tag to v14.1.3
       hash: f84ee0b3ecfed3d10bb6b6811cf08e4906a63534
       body: |
