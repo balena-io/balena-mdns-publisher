@@ -1,4 +1,19 @@
 - commits:
+    - subject: Update dependency balena-sdk to 16.31.2
+      hash: a0bf2e5e17375c3ede7575fd3eb692fa87888f13
+      body: |
+        Update balena-sdk to 16.31.2
+
+        Update balena-sdk from 12.33.0 to 16.31.2
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: Renovate Bot
+      nested: []
+  version: 1.22.0
+  title: ""
+  date: 2023-01-09T17:55:44.374Z
+- commits:
     - subject: Update balena/open-balena-base Docker tag to v14.2.0
       hash: 317ba025da5e5f7f31ddda67165b26fa9f320c03
       body: |
