@@ -1,4 +1,19 @@
 - commits:
+    - subject: Update dependency typescript to 4.9.5
+      hash: 655b12f02aae99f9c953191757e5f8a529ed72d9
+      body: |
+        Update typescript to 4.9.5
+
+        Update typescript from 4.9.4 to 4.9.5
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 1.21.1
+  title: ""
+  date: 2023-01-30T22:05:24.106Z
+- commits:
     - subject: Update balena/open-balena-base Docker tag to v14.2.0
       hash: 317ba025da5e5f7f31ddda67165b26fa9f320c03
       body: |
