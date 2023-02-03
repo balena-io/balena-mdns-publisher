@@ -1,4 +1,19 @@
 - commits:
+    - subject: Update balena/open-balena-base Docker tag to v14.4.1
+      hash: a7788450cfa071e72e78eaf0f480021c052b5204
+      body: |
+        Update balena/open-balena-base to 14.4.1
+
+        Update balena/open-balena-base from 14.2.0 to 14.4.1
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: Renovate Bot
+      nested: []
+  version: 1.22.0
+  title: ""
+  date: 2023-02-03T23:56:09.069Z
+- commits:
     - subject: Update dependency typescript to 4.9.5
       hash: 655b12f02aae99f9c953191757e5f8a529ed72d9
       body: |
