@@ -1,4 +1,19 @@
 - commits:
+    - subject: Update dependency lint-staged to 13.1.2
+      hash: 2baa26da334e281d80e7f7b0ecd4d58defb2e371
+      body: |
+        Update lint-staged to 13.1.2
+
+        Update lint-staged from 13.1.1 to 13.1.2
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 1.23.2
+  title: ""
+  date: 2023-02-13T19:57:45.642Z
+- commits:
     - subject: Update dependency lint-staged to 13.1.1
       hash: a90bf916a8dbf1e55c9c7964fadbb48d81f3072d
       body: |
