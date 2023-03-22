@@ -1,4 +1,86 @@
 - commits:
+    - subject: Update open-balena-base to 14.7.2
+      hash: eda4633eb6197ea97f71dbaacc2adc28cfbeab6c
+      body: |
+        Update open-balena-base from 14.5.4 to 14.7.2
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: Pagan Gazzard
+      nested:
+        - commits:
+            - subject: Maintain legacy docker tags behaviour
+              hash: 34b2de3df298c53120ad714329ab2344657a7078
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Kyle Harding <kyle@balena.io>
+                signed-off-by: Kyle Harding <kyle@balena.io>
+              author: Kyle Harding
+              nested: []
+          version: open-balena-base-14.7.2
+          title: ""
+          date: 2023-03-22T16:00:23.319Z
+        - commits:
+            - subject: Update dependency npm to v9.6.2
+              hash: 0761d839de2e00e3c0248b4cd386b02c24ed041b
+              body: |
+                Update npm from 9.6.0 to 9.6.2
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: Renovate Bot
+              nested: []
+          version: open-balena-base-14.7.1
+          title: ""
+          date: 2023-03-20T21:50:27.970Z
+        - commits:
+            - subject: Update dependency node
+              hash: 506cc28914b6e972a008ce4d4ec059bd03600eaf
+              body: |
+                Update node to 18.15.0
+
+                Update node from 18.14.2 to 18.15.0
+              footer:
+                Change-type: minor
+                change-type: minor
+              author: Renovate Bot
+              nested: []
+          version: open-balena-base-14.7.0
+          title: ""
+          date: 2023-03-20T19:49:51.262Z
+        - commits:
+            - subject: Restart confd if it fails to start
+              hash: 016e1648f87140697929352e48e26268d3da6641
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: Anton Belodedenko
+              nested: []
+          version: open-balena-base-14.6.1
+          title: ""
+          date: 2023-03-14T18:06:32.094Z
+        - commits:
+            - subject: Update dependency npm to 9.6.0
+              hash: 2690a6a9440f14a4342ed01e4084181e110fa705
+              body: |
+                Update npm to 9.6.0
+
+                Update npm from 9.5.1 to 9.6.0
+              footer:
+                Change-type: minor
+                change-type: minor
+              author: Renovate Bot
+              nested: []
+          version: open-balena-base-14.6.0
+          title: ""
+          date: 2023-03-02T10:50:07.443Z
+  version: 1.25.0
+  title: ""
+  date: 2023-03-22T16:11:59.421Z
+- commits:
     - subject: Update balena/open-balena-base Docker tag to v14.5.4
       hash: 15aa220343d4e383f1c1cab5e4d307f145be6a66
       body: |
