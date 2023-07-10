@@ -1,4 +1,106 @@
 - commits:
+    - subject: Update open-balena-base to 15.0.0
+      hash: 36e5c0a2ecf5f66fe8a7338569c40cb65bf95763
+      body: |
+        Update open-balena-base from 14.9.3 to 15.0.0
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Pagan Gazzard
+      nested:
+        - commits:
+            - subject: Upgrade to debian bookworm
+              hash: 492ce2808a7fafe6df99256948a6366fee6836fc
+              body: ""
+              footer:
+                Change-type: major
+                change-type: major
+              author: Pagan Gazzard
+              nested: []
+          version: open-balena-base-15.0.0
+          title: ""
+          date: 2023-07-06T16:19:57.969Z
+        - commits:
+            - subject: Update Node.js to v18.16.1
+              hash: f503c520c701649745a9f8fe16a9e00abe9330ca
+              body: |
+                Update node from 18.16.0 to 18.16.1
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: Self-hosted Renovate Bot
+              nested: []
+          version: open-balena-base-14.11.1
+          title: ""
+          date: 2023-07-05T22:04:23.263Z
+        - commits:
+            - subject: Update dependency npm to v9.8.0
+              hash: 08daab22e7497506c6d426900952ed186d273b0b
+              body: |
+                Update npm from 9.7.2 to 9.8.0
+              footer:
+                Change-type: minor
+                change-type: minor
+              author: Self-hosted Renovate Bot
+              nested: []
+          version: open-balena-base-14.11.0
+          title: ""
+          date: 2023-07-05T21:02:09.040Z
+        - commits:
+            - subject: Update dependency npm to v9.7.2
+              hash: dc44055a7bae68fa173261103af949ca76448979
+              body: |
+                Update npm from 9.7.1 to 9.7.2
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: Self-hosted Renovate Bot
+              nested: []
+          version: open-balena-base-14.10.2
+          title: ""
+          date: 2023-06-21T19:00:56.925Z
+        - commits:
+            - subject: Update dependency node to v18.16.1
+              hash: 37279e28a319d6594b1c5bc6e74ee779b8210ab0
+              body: |
+                Update node from 18.16.0 to 18.16.1
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: Self-hosted Renovate Bot
+              nested: []
+          version: open-balena-base-14.10.1
+          title: ""
+          date: 2023-06-21T11:03:53.581Z
+        - commits:
+            - subject: Update dependency npm to v9.7.1
+              hash: 6af4dabea40287d9bac00f001ea5cb2e228d2277
+              body: |
+                Update npm from 9.6.7 to 9.7.1
+              footer:
+                Change-type: minor
+                change-type: minor
+              author: Self-hosted Renovate Bot
+              nested: []
+          version: open-balena-base-14.10.0
+          title: ""
+          date: 2023-06-07T16:02:28.180Z
+        - commits:
+            - subject: Set systemd stopsignal to SIGRTMIN+3
+              hash: 5c69245959e57bcb4c033bc027d817801f7a1428
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: Pagan Gazzard
+              nested: []
+          version: open-balena-base-14.9.4
+          title: ""
+          date: 2023-05-31T16:09:26.999Z
+  version: 1.27.3
+  title: ""
+  date: 2023-07-10T16:05:47.982Z
+- commits:
     - subject: Update dependency @types/lodash to v4.14.195
       hash: 2bf88ca494a5eb246ac710da8f0b15b50a9c86bf
       body: |
