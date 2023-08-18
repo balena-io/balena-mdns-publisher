@@ -1,4 +1,17 @@
 - commits:
+    - subject: Update dependency lint-staged to v13.3.0
+      hash: d4480e558274314f4dda8a1f8d1b2ecf43b6c34d
+      body: |
+        Update lint-staged from 13.2.2 to 13.3.0
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Self-hosted Renovate Bot
+      nested: []
+  version: 1.27.6
+  title: ""
+  date: 2023-08-18T00:14:11.535Z
+- commits:
     - subject: Update dependency @types/lodash to v4.14.197
       hash: fa73b118838dc9577ecffcd2cc6dbb21dcc664d1
       body: |
