@@ -1,4 +1,17 @@
 - commits:
+    - subject: Update balena/open-balena-base Docker tag to v15.0.5
+      hash: 4d5d116fa4d0f3f6277355c8fb1bddeea7cf121b
+      body: |
+        Update balena/open-balena-base from 15.0.3 to 15.0.5
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Self-hosted Renovate Bot
+      nested: []
+  version: 1.27.7
+  title: ""
+  date: 2023-09-07T14:14:58.625Z
+- commits:
     - subject: Update dependency lint-staged to v13.3.0
       hash: d4480e558274314f4dda8a1f8d1b2ecf43b6c34d
       body: |
