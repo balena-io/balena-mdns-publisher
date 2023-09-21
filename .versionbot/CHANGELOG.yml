@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update repo.yml
+      hash: 2dc0b6ceb8e947e706aaf8145799c2d76a071894
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Kyle Harding
+      nested: []
+  version: 1.27.11
+  title: ""
+  date: 2023-09-21T16:16:56.645Z
+- commits:
     - subject: Update open-balena-base package.json to specify nodejs 20
       hash: 069714b1190928be36ab098935d5edc0f0334b79
       body: ""
