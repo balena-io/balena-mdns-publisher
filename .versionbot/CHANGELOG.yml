@@ -1,4 +1,17 @@
 - commits:
+    - subject: Update dependency @types/lodash to v4.14.199
+      hash: 02803b48d5db178fa01da3cebb3bd5b31ceb96f2
+      body: |
+        Update @types/lodash from 4.14.197 to 4.14.199
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Self-hosted Renovate Bot
+      nested: []
+  version: 1.27.15
+  title: ""
+  date: 2023-10-02T17:18:00.019Z
+- commits:
     - subject: Update dependency typescript to v5
       hash: 11862745ccc9debee8fd2cc2c5e113b86d9dcf0d
       body: |
