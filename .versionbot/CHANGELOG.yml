@@ -1,4 +1,17 @@
 - commits:
+    - subject: Update dependency typescript to v5
+      hash: 11862745ccc9debee8fd2cc2c5e113b86d9dcf0d
+      body: |
+        Update typescript from 4.9.5 to 5.2.2
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Self-hosted Renovate Bot
+      nested: []
+  version: 1.27.14
+  title: ""
+  date: 2023-10-02T17:01:10.675Z
+- commits:
     - subject: Update balena/open-balena-base from 16.0.0 to 16.0.7
       hash: 646970b915783e75be0f943679e1002122c83767
       body: ""
