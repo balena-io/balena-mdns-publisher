@@ -1,4 +1,17 @@
 - commits:
+    - subject: Update dependency @types/request-promise to v4.1.50
+      hash: e9e993ad47f66f513547bc6d10a52fd1939979c2
+      body: |
+        Update @types/request-promise from 4.1.49 to 4.1.50
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Self-hosted Renovate Bot
+      nested: []
+  version: 1.27.22
+  title: ""
+  date: 2023-10-21T14:03:52.152Z
+- commits:
     - subject: Update dependency @balena/lint to v7.2.1
       hash: ed8b16664eaab29b1970fa4a391dbaaa1dff5eb8
       body: |
