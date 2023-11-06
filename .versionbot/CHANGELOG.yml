@@ -1,4 +1,17 @@
 - commits:
+    - subject: Lock file maintenance
+      hash: 110ae98e394d516f62dab5ecdd0bf4fd630a0af8
+      body: |
+        Update
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Self-hosted Renovate Bot
+      nested: []
+  version: 1.27.28
+  title: ""
+  date: 2023-11-06T01:24:45.229Z
+- commits:
     - subject: Update balena/open-balena-base Docker tag to v16.0.13
       hash: b48f5ddaced693f1c6d73592d480969debfb780b
       body: |
