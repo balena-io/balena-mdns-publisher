@@ -1,4 +1,17 @@
 - commits:
+    - subject: Update dependency @types/request-promise to v4.1.51
+      hash: 3a8eda256ae73f1cf724d4fb07d53ea6d51f355c
+      body: |
+        Update @types/request-promise from 4.1.50 to 4.1.51
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Self-hosted Renovate Bot
+      nested: []
+  version: 1.27.29
+  title: ""
+  date: 2023-11-10T16:06:38.897Z
+- commits:
     - subject: Lock file maintenance
       hash: 110ae98e394d516f62dab5ecdd0bf4fd630a0af8
       body: |
