@@ -1,4 +1,17 @@
 - commits:
+    - subject: Update dependency @balena/lint to v7.2.2
+      hash: 93eb8975a9c3afc6b65aead0342aefef35bd7f2b
+      body: |
+        Update @balena/lint from 7.2.1 to 7.2.2
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Self-hosted Renovate Bot
+      nested: []
+  version: 1.27.31
+  title: ""
+  date: 2023-11-12T17:02:11.071Z
+- commits:
     - subject: Update dependency @types/lodash to v4.14.201
       hash: cbe572dde9e34358d0bd515a41f5fc1a81a376fb
       body: |
