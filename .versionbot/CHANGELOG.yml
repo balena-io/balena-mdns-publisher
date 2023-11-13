@@ -1,4 +1,17 @@
 - commits:
+    - subject: Lock file maintenance
+      hash: 18d0479d8576698269626575bcbaa117ae28ef6e
+      body: |
+        Update
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Self-hosted Renovate Bot
+      nested: []
+  version: 1.27.33
+  title: ""
+  date: 2023-11-13T01:23:28.366Z
+- commits:
     - subject: Update dependency @balena/lint to v7.2.3
       hash: 0932ca7a04cba359f4ec443c279bf2ce620aa0d1
       body: |
