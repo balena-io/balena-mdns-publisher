@@ -1,4 +1,30 @@
 - commits:
+    - subject: Update balena/open-balena-base Docker tag to v16.0.14
+      hash: 086038497af0ff5b997fd81fd7e63df80e679ee4
+      body: |
+        Update balena/open-balena-base from 16.0.13 to 16.0.14
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Self-hosted Renovate Bot
+      nested:
+        - commits:
+            - subject: Update dependency npm to v10.2.4
+              hash: a914500d0a42a83e73c3cf65d08749ce70d84d6d
+              body: |
+                Update npm from 10.2.3 to 10.2.4
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: Self-hosted Renovate Bot
+              nested: []
+          version: open-balena-base-16.0.14
+          title: ""
+          date: 2023-11-15T22:00:31.166Z
+  version: 1.27.36
+  title: ""
+  date: 2023-11-15T23:04:42.267Z
+- commits:
     - subject: Update dependency @balena/lint to v7.2.4
       hash: 085b1ee41db8db341d2fee56fe756bcd6620ff04
       body: |
