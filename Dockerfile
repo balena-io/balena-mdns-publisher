@@ -1,4 +1,4 @@
-FROM balena/open-balena-base:v16.0.14 as base
+FROM balena/open-balena-base:v16.0.15 as base
 
 RUN apt-get update && \
     apt-get install -yq --no-install-recommends \
