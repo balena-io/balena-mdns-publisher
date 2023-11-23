@@ -38,7 +38,7 @@
     "@types/request-promise": "4.1.51",
     "husky": "^8.0.1",
     "lint-staged": "13.3.0",
-    "typescript": "5.2.2"
+    "typescript": "5.3.2"
   },
   "engines": {
     "node": "^20.6.1",
