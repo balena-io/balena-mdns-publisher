@@ -1,4 +1,17 @@
 - commits:
+    - subject: Update dependency lint-staged to v15
+      hash: 0b9e471a51229e56931c709ec59b8fe02308f623
+      body: |
+        Update lint-staged from 13.3.0 to 15.1.0
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Self-hosted Renovate Bot
+      nested: []
+  version: 1.27.42
+  title: ""
+  date: 2023-11-28T16:11:55.156Z
+- commits:
     - subject: Lock file maintenance
       hash: be2d71d22b9b96813f1695e00127a297b7f175a1
       body: |
