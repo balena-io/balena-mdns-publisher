@@ -1,4 +1,17 @@
 - commits:
+    - subject: Lock file maintenance
+      hash: ab5ddd13780efde93936808718c2d6b47829cb67
+      body: |
+        Update
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Self-hosted Renovate Bot
+      nested: []
+  version: 1.27.43
+  title: ""
+  date: 2023-12-04T01:18:30.278Z
+- commits:
     - subject: Update dependency lint-staged to v15
       hash: 0b9e471a51229e56931c709ec59b8fe02308f623
       body: |
