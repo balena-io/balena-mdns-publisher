@@ -24,7 +24,7 @@
   },
   "private": true,
   "dependencies": {
-    "balena-sdk": "12.33.0",
+    "balena-sdk": "19.3.2",
     "bluebird": "3.7.2",
     "dbus-native": "0.4.0",
     "lodash": "4.17.21",
