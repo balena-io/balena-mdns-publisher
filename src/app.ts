@@ -143,7 +143,10 @@ const reapDevices = async (addresses: string[], deviceTld?: string) => {
 	for (const address of addresses) {
 		// Query the SDK using the Proxy service key for *all* current devices
 		try {
-			const devices = await balena.models.device.getAll();
+			const devices = await balena.pine.get({
+				resource: 'device',
+				options: {$orderby: 'device_name asc'}
+			}) as BalenaSdk.Device[];
 
 			// Get list of all accessible devices
 			const newAccessible = _.filter(
@@ -193,7 +196,7 @@ const MDNSHosts = process.env.MDNS_SUBDOMAINS
 	? process.env.MDNS_SUBDOMAINS.split(',')
 	: [];
 
-const balena = BalenaSdk({
+const balena = BalenaSdk.getSdk({
 	apiUrl: `https://${process.env.API_HOST}/`,
 });
 
