@@ -1,4 +1,15 @@
 - commits:
+    - subject: deprecate registry hostname
+      hash: 67babb653d249b8b1482de6d293382c23aad35a3
+      body: ""
+      footer:
+        change-type: patch
+      author: ab77
+      nested: []
+  version: 1.27.49
+  title: ""
+  date: 2023-12-13T01:16:57.710Z
+- commits:
     - subject: Lock file maintenance
       hash: 30eabb5ef116931ac2c1bb6d12e4c664e68686e2
       body: |
