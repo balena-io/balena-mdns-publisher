@@ -1,12 +1,10 @@
 name: Flowzone
-
 on:
   pull_request:
     types: [opened, synchronize, closed]
     branches:
       - "main"
       - "master"
-
 jobs:
   flowzone:
     name: Flowzone
@@ -14,6 +12,3 @@ jobs:
     secrets: inherit
     with:
       docker_images: balena/balena-mdns-publisher
-      repo_config: true
-      repo_description: "MDNS address publisher for balena services"
-      repo_homepage: "https://www.balena.io/"
