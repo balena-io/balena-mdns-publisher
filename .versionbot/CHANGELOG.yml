@@ -1,4 +1,21 @@
 - commits:
+    - subject: Remove repo config from flowzone.yml
+      hash: dfc3e5a39ea99e9a4b9cbba84300ca0aaabd1997
+      body: |
+        This functionality is being deprecated in Flowzone.
+
+        See: https://github.com/product-os/flowzone/pull/833
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Kyle Harding <kyle@balena.io>
+        signed-off-by: Kyle Harding <kyle@balena.io>
+      author: Kyle Harding
+      nested: []
+  version: 1.27.52
+  title: ""
+  date: 2023-12-19T22:00:43.149Z
+- commits:
     - subject: Lock file maintenance
       hash: 44aef9fb6e9fd7121ef903160d2658d0d699024b
       body: |
