@@ -1,4 +1,17 @@
 - commits:
+    - subject: Update dependency @balena/lint to v7.2.5
+      hash: 39e1f0d52e57beb3e02cafb4e82804d8b8d32a30
+      body: |
+        Update @balena/lint from 7.2.4 to 7.2.5
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Self-hosted Renovate Bot
+      nested: []
+  version: 1.27.69
+  title: ""
+  date: 2024-02-02T14:54:28.840Z
+- commits:
     - subject: Update dependency balena-sdk to v19.5.0
       hash: d8982dd6b0e13024c24740d16c51496904c11513
       body: |
