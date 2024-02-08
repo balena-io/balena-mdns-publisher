@@ -1,4 +1,17 @@
 - commits:
+    - subject: Update dependency lint-staged to v15.2.2
+      hash: c703c636b482b2c2fd80d1c6c3213e42103d2741
+      body: |
+        Update lint-staged from 15.2.1 to 15.2.2
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Self-hosted Renovate Bot
+      nested: []
+  version: 1.27.75
+  title: ""
+  date: 2024-02-08T14:53:23.139Z
+- commits:
     - subject: Update dependency balena-sdk to v19.5.1
       hash: 893b1da60b607957bfdf6ab912c28d1fede9e258
       body: |
