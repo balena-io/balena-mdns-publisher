@@ -1,4 +1,17 @@
 - commits:
+    - subject: Lock file maintenance
+      hash: 67e1c8355e5c0d16dc9802353453bc1912313437
+      body: |
+        Update
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Self-hosted Renovate Bot
+      nested: []
+  version: 1.27.81
+  title: ""
+  date: 2024-02-19T01:14:39.894Z
+- commits:
     - subject: Update dependency balena-sdk to v19.5.4
       hash: a38ab94c3d53471b7342e9646d3b6be06f6f4331
       body: |
