@@ -7,7 +7,7 @@
     "lint": "balena-lint src/ typings/ && tsc --noEmit",
     "start": "node build/app.js",
     "test": "true",
-    "prepare": "node -e \"try { require('husky').install() } catch (e) {if (e.code !== 'MODULE_NOT_FOUND') throw e}\""
+    "prepare": "node -e \"try { (await import('husky')).default() } catch (e) { if (e.code !== 'ERR_MODULE_NOT_FOUND') throw e }\" --input-type module"
   },
   "author": "Heds Simons <heds@balena.io>",
   "repository": {
@@ -36,7 +36,7 @@
     "@types/lodash": "4.14.202",
     "@types/node": "^20.6.0",
     "@types/request-promise": "4.1.51",
-    "husky": "^8.0.1",
+    "husky": "^9.0.0",
     "lint-staged": "15.2.2",
     "typescript": "5.3.3"
   },
