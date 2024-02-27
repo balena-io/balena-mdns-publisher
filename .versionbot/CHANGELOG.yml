@@ -1,4 +1,31 @@
 - commits:
+    - subject: Update balena/open-balena-base Docker tag to v17.0.7
+      hash: e3af0cb5e247b9dc0f878a781208558dafe1fccd
+      body: |
+        Update balena/open-balena-base from 17.0.6 to 17.0.7
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Self-hosted Renovate Bot
+      nested:
+        - commits:
+            - subject: Fix docker cache-from for no-system variants
+              hash: 47989bd29164aaef2f78c2642aeaf64185df5561
+              body: ""
+              footer:
+                See: https://github.com/balena-io-modules/open-balena-base/pull/343
+                see: https://github.com/balena-io-modules/open-balena-base/pull/343
+                Change-type: patch
+                change-type: patch
+              author: Kyle Harding
+              nested: []
+          version: open-balena-base-17.0.7
+          title: ""
+          date: 2024-02-27T21:40:13.465Z
+  version: 1.27.86
+  title: ""
+  date: 2024-02-27T21:55:44.108Z
+- commits:
     - subject: Update balena/open-balena-base Docker tag to v17.0.6
       hash: 8fea856b684031467372deb194d7043d94a102a3
       body: |
