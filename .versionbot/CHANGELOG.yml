@@ -1,4 +1,17 @@
 - commits:
+    - subject: Update dependency typescript to v5.4.2
+      hash: 76de22a432c03b9d164f62f68186b4a2efa0a7a6
+      body: |
+        Update typescript from 5.3.3 to 5.4.2
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Self-hosted Renovate Bot
+      nested: []
+  version: 1.27.92
+  title: ""
+  date: 2024-03-09T18:53:35.342Z
+- commits:
     - subject: Update balena/open-balena-base Docker tag to v17.0.10
       hash: 160cabbf51690e4b6f8c9495a9a54703fc583530
       body: |
