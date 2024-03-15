@@ -1,4 +1,17 @@
 - commits:
+    - subject: Update dependency @types/lodash to v4.17.0
+      hash: 1bbb0ef0d37ee6d6b986aef92a0eb4d6c497d61c
+      body: |
+        Update @types/lodash from 4.14.202 to 4.17.0
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Self-hosted Renovate Bot
+      nested: []
+  version: 1.27.96
+  title: ""
+  date: 2024-03-15T10:53:12.143Z
+- commits:
     - subject: Update dependency balena-sdk to v19.5.7
       hash: bdc5d3af29ea39f6a399f6e6744eb75abb127d00
       body: |
