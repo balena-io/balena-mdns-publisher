@@ -1,4 +1,17 @@
 - commits:
+    - subject: Update dependency @balena/lint to v8
+      hash: 8d84c9bb296ec13365faa5bd659bf80a84c5fe43
+      body: |
+        Update @balena/lint from 7.3.0 to 8.0.1
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Self-hosted Renovate Bot
+      nested: []
+  version: 1.27.111
+  title: ""
+  date: 2024-04-12T10:12:24.567Z
+- commits:
     - subject: Update balena/open-balena-base Docker tag to v17.0.14
       hash: e16c7c8e65be418b7f947d15da9d517c08304e43
       body: |
