@@ -1,4 +1,17 @@
 - commits:
+    - subject: Update dependency typescript to v5.4.5
+      hash: 565383fe7f59e0e946f4e2ee527c7e05e18289fd
+      body: |
+        Update typescript from 5.4.4 to 5.4.5
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Self-hosted Renovate Bot
+      nested: []
+  version: 1.27.112
+  title: ""
+  date: 2024-04-12T11:31:00.800Z
+- commits:
     - subject: Update dependency @balena/lint to v8
       hash: 8d84c9bb296ec13365faa5bd659bf80a84c5fe43
       body: |
