@@ -1,4 +1,17 @@
 - commits:
+    - subject: Lock file maintenance
+      hash: fec2451e93b87d05ecc950ba3a63625bcb074a94
+      body: |
+        Update
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Self-hosted Renovate Bot
+      nested: []
+  version: 1.27.113
+  title: ""
+  date: 2024-04-15T00:12:32.563Z
+- commits:
     - subject: Update dependency typescript to v5.4.5
       hash: 565383fe7f59e0e946f4e2ee527c7e05e18289fd
       body: |
