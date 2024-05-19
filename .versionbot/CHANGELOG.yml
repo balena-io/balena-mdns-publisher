@@ -1,4 +1,17 @@
 - commits:
+    - subject: Update dependency @types/lodash to v4.17.3
+      hash: 89a77f8162c1c9247c43bec25fdda1c9ac00ae87
+      body: |
+        Update @types/lodash from 4.17.2 to 4.17.3
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Self-hosted Renovate Bot
+      nested: []
+  version: 1.27.127
+  title: ""
+  date: 2024-05-19T15:55:32.775Z
+- commits:
     - subject: Update dependency @types/lodash to v4.17.2
       hash: 1468870dbfe099c80dfef6ae3783c83397a1b74f
       body: |
