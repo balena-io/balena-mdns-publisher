@@ -1,4 +1,17 @@
 - commits:
+    - subject: Lock file maintenance
+      hash: 3e49f853de836274e93fd322018f241f13b81013
+      body: |
+        Update
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Self-hosted Renovate Bot
+      nested: []
+  version: 1.27.128
+  title: ""
+  date: 2024-05-20T01:16:02.751Z
+- commits:
     - subject: Update dependency @types/lodash to v4.17.3
       hash: 89a77f8162c1c9247c43bec25fdda1c9ac00ae87
       body: |
