@@ -1,4 +1,17 @@
 - commits:
+    - subject: Update dependency lint-staged to v15.2.4
+      hash: e02431569297bf6ff2487e1b9ef24f044273467f
+      body: |
+        Update lint-staged from 15.2.2 to 15.2.4
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Self-hosted Renovate Bot
+      nested: []
+  version: 1.27.130
+  title: ""
+  date: 2024-05-24T19:53:27.954Z
+- commits:
     - subject: Update dependency @types/lodash to v4.17.4
       hash: db15cab4d48def841d34284f29fb8e552e4c3c6e
       body: |
