@@ -1,4 +1,16 @@
 - commits:
+    - subject: Use caret ranges for dependencies for more flexibility
+      hash: 848c7947a5ebd389b7c6e29befae21e4d54a2964
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Pagan Gazzard
+      nested: []
+  version: 1.27.134
+  title: ""
+  date: 2024-05-28T17:30:29.911Z
+- commits:
     - subject: Update balena/open-balena-base Docker tag to v18
       hash: 56322cbca381f40e4f7416eae780de26b45ca360
       body: |
