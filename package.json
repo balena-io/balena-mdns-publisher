@@ -1,6 +1,6 @@
 {
   "name": "balena-mdns-publisher",
-  "version": "1.27.131",
+  "version": "1.27.132",
   "scripts": {
     "build": "tsc",
     "prettify": "balena-lint --fix src/ typings/",
@@ -56,6 +56,6 @@
     ]
   },
   "versionist": {
-    "publishedAt": "2024-05-27T01:14:42.608Z"
+    "publishedAt": "2024-05-28T11:57:21.292Z"
   }
 }
