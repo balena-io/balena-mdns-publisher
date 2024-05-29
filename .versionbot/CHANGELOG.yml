@@ -1,4 +1,30 @@
 - commits:
+    - subject: Update balena/open-balena-base Docker tag to v18.0.1
+      hash: 20242f6261ab5fb3a07a28cf3d4d106e107a9d89
+      body: |
+        Update balena/open-balena-base from 18.0.0 to 18.0.1
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Self-hosted Renovate Bot
+      nested:
+        - commits:
+            - subject: Update dependency npm to v10.8.1
+              hash: 38a545992fa5ed900d105b6a2790b889fb910b99
+              body: |
+                Update npm from 10.8.0 to 10.8.1
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: Self-hosted Renovate Bot
+              nested: []
+          version: open-balena-base-18.0.1
+          title: ""
+          date: 2024-05-29T21:51:28.091Z
+  version: 1.27.135
+  title: ""
+  date: 2024-05-29T22:56:23.679Z
+- commits:
     - subject: Use caret ranges for dependencies for more flexibility
       hash: 848c7947a5ebd389b7c6e29befae21e4d54a2964
       body: ""
