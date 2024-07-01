@@ -1,4 +1,37 @@
 - commits:
+    - subject: Update balena/open-balena-base Docker tag to v18.0.3
+      hash: 022fe52bb82646ebe7b3ab567b4d4a071e1eedef
+      body: |
+        Update balena/open-balena-base from 18.0.2 to 18.0.3
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Self-hosted Renovate Bot
+      nested:
+        - commits:
+            - subject: Empty commit to rebuild open-balena-base to fix CVE-2024-6387.
+              hash: 4d7156be75e535ad5ab4a2bf2d574fde1b86d45c
+              body: >
+                Causes a rebuild of the open-balena-base to include
+                openssh-server
+
+                1:9.2p1-2+deb12u3 (OpenSSH_9.2p1 Debian-2+deb12u3) which fixes
+
+                [cve-2024-6387](https://www.qualys.com/2024/07/01/cve-2024-6387/regresshion.txt).
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Carlo Miguel F. Cruz <carloc@balena.io>
+                signed-off-by: Carlo Miguel F. Cruz <carloc@balena.io>
+              author: Carlo Miguel F. Cruz
+              nested: []
+          version: open-balena-base-18.0.3
+          title: ""
+          date: 2024-07-01T14:45:38.881Z
+  version: 1.27.142
+  title: ""
+  date: 2024-07-01T15:55:52.954Z
+- commits:
     - subject: Lock file maintenance
       hash: 920a21a2f98ca1ff80c1d8d241f57fee69b67e9b
       body: |
