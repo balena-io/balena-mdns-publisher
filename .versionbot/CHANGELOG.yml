@@ -1,4 +1,16 @@
 - commits:
+    - subject: Optimize finding which devices to publish & unpublish
+      hash: c020fffe15b767a31a61ec9f60036ae8b424e8e0
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Thodoris Greasidis
+      nested: []
+  version: 1.27.166
+  title: ""
+  date: 2024-09-16T16:42:31.970Z
+- commits:
     - subject: Optimize the API request to fetch only the uuid & of only the
         accessible devices
       hash: 6179b70e748b1f4e4b0c898630fb99c48abbb93a
