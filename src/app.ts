@@ -19,7 +19,7 @@ interface PublishedHosts {
 /** List of published hosts */
 const publishedHosts: PublishedHosts[] = [];
 /** List of devices with accessible public URLs */
-let accessibleDevices: BalenaSdk.Device[] = [];
+let accessibleDevices: Array<Pick<BalenaSdk.Device, 'uuid'>> = [];
 
 /** DBus controller */
 const dbus = systemBus();
@@ -143,22 +143,22 @@ const reapDevices = async (addresses: string[], deviceTld?: string) => {
 	for (const address of addresses) {
 		// Query the SDK using the Proxy service key for *all* current devices
 		try {
-			const devices = await balena.pine.get({
-				resource: 'device',
-				options: {$orderby: 'device_name asc'}
-			}) as BalenaSdk.Device[];
-
 			// Get list of all accessible devices
-			const newAccessible = _.filter(
-				devices,
-				(device) => device.is_web_accessible,
-			);
+			const newAccessible = await balena.pine.get({
+				resource: 'device',
+				options: {
+					$select: 'uuid',
+					$filter: {
+						is_web_accessible: true,
+					},
+				},
+			});
 
 			// Get all devices that are not in both lists
 			const xorList = _.xorBy(accessibleDevices, newAccessible, 'uuid');
 
 			// Get all new devices to be published and old to be unpublished
-			const toUnpublish: BalenaSdk.Device[] = [];
+			const toUnpublish: typeof newAccessible = [];
 			const toPublish = _.filter(xorList, (device) => {
 				const filter = _.find(newAccessible, { uuid: device.uuid })
 					? true
