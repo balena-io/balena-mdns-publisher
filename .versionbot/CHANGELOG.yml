@@ -1,4 +1,17 @@
 - commits:
+    - subject: Optimize the API request to fetch only the uuid & of only the
+        accessible devices
+      hash: 6179b70e748b1f4e4b0c898630fb99c48abbb93a
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Thodoris Greasidis
+      nested: []
+  version: 1.27.165
+  title: ""
+  date: 2024-09-16T15:06:15.989Z
+- commits:
     - subject: Update dependency balena-sdk to v20
       hash: 95375f87865ecbc5b9e47040312a8e2810945518
       body: |
