@@ -154,29 +154,21 @@ const reapDevices = async (addresses: string[], deviceTld?: string) => {
 				},
 			});
 
-			// Get all devices that are not in both lists
-			const xorList = _.xorBy(accessibleDevices, newAccessible, 'uuid');
-
-			// Get all new devices to be published and old to be unpublished
-			const toUnpublish: typeof newAccessible = [];
-			const toPublish = _.filter(xorList, (device) => {
-				const filter = _.find(newAccessible, { uuid: device.uuid })
-					? true
-					: false;
-				if (!filter) {
-					toUnpublish.push(device);
+			// Publish everything new
+			const oldAccessibleUuids = new Set(accessibleDevices.map((d) => d.uuid));
+			for (const device of newAccessible) {
+				if (!oldAccessibleUuids.has(device.uuid)) {
+					await addHostAddress(`${device.uuid}.devices.${deviceTld}`, [
+						address,
+					]);
 				}
-				return filter;
-			});
-
-			// Publish everything required
-			for (const device of toPublish) {
-				await addHostAddress(`${device.uuid}.devices.${deviceTld}`, [address]);
 			}
-
-			// Unpublish the rest
-			for (const device of toUnpublish) {
-				await removeHostAddress(`${device.uuid}.devices.${deviceTld}`);
+			// Unpublish everything no longer accessible
+			const newAccessibleUuids = new Set(newAccessible.map((d) => d.uuid));
+			for (const device of accessibleDevices) {
+				if (!newAccessibleUuids.has(device.uuid)) {
+					await removeHostAddress(`${device.uuid}.devices.${deviceTld}`);
+				}
 			}
 
 			accessibleDevices = newAccessible;
