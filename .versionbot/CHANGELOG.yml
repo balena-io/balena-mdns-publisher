@@ -1,4 +1,17 @@
 - commits:
+    - subject: Lock file maintenance
+      hash: f3f0bece3da7f78686fc7a8c0ef7ed6c9125c3af
+      body: |
+        Update
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Self-hosted Renovate Bot
+      nested: []
+  version: 1.27.176
+  title: ""
+  date: 2024-10-28T01:27:45.112Z
+- commits:
     - subject: Update dependency @balena/lint to v9
       hash: dfe410bf2fcfbdb1c2a3fe8ccb077b2bf080887c
       body: |
