@@ -1,4 +1,17 @@
 - commits:
+    - subject: Update dependency @types/node to v22
+      hash: 948a3aca94e491f6401e046d9da8ddd2f905a460
+      body: |
+        Update @types/node from 20.17.1 to 22.8.5
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: balena-renovate[bot]
+      nested: []
+  version: 1.27.178
+  title: ""
+  date: 2024-11-03T13:03:12.452Z
+- commits:
     - subject: Update Node.js to v22
       hash: 9ad7b51f3b7447f1caeb85c28312a90392132e3e
       body: |
