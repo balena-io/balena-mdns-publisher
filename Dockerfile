@@ -19,7 +19,7 @@ COPY config/services /etc/systemd/system
 RUN systemctl enable balena-mdns-publisher.service
 
 # Build service
-FROM base as build
+FROM base AS build
 
 RUN JOBS=MAX npm ci
 
