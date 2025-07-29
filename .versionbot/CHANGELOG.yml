@@ -1,4 +1,27 @@
 - commits:
+    - subject: Update balena/open-balena-base Docker tag to v18.0.39
+      hash: 488300f3fe596e35333d27eed64c44e023860b58
+      body: |
+        Update balena/open-balena-base from 18.0.38 to 18.0.39
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: balena-renovate[bot]
+      nested:
+        - commits:
+            - subject: "patch: Remove obsolete/deprecated hosts"
+              hash: 931f46c68ff94779951fa2ef6775b18716e1b94b
+              body: ""
+              footer: {}
+              author: Anton Belodedenko
+              nested: []
+          version: open-balena-base-18.0.39
+          title: ""
+          date: 2025-07-29T14:22:29.581Z
+  version: 1.27.197
+  title: ""
+  date: 2025-07-29T14:41:25.458Z
+- commits:
     - subject: "patch: Correct Dockerfile syntax"
       hash: a16d6d80abb4923fd4670a11a6a83337463cb790
       body: ""
