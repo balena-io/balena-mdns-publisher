@@ -7,7 +7,7 @@ set -a
 # avahi-resolve doesn't return non-zero error code on failure :/
 for host in $(env \
   | grep -E "^[A-Z0-9_]+_HOST=.*\.${MDNS_TLD}$|^[A-Z0-9_]+_HOSTNAME=.*\.${MDNS_TLD}$" \
-  | grep -Ev 'BALENA|files\.' \
+  | grep -Ev '(BALENA|files\.|^ALERTMANAGER_|^MONITOR_|^DATA_|^LOKI_)' \
   | sed 's|http.*://||g'); do
     avahi-resolve -n4 $(echo ${host} | awk -F'=' '{print $2}') 2>&1 | grep -vE 'Failed|Timeout' || exit $?
 done
