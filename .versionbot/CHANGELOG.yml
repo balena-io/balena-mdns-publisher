@@ -1,4 +1,14 @@
 - commits:
+    - subject: "patch: Correct Dockerfile syntax"
+      hash: a16d6d80abb4923fd4670a11a6a83337463cb790
+      body: ""
+      footer: {}
+      author: Anton Belodedenko
+      nested: []
+  version: 1.27.196
+  title: ""
+  date: 2025-07-29T04:18:22.120Z
+- commits:
     - subject: Update dependency lint-staged to v16
       hash: 8e12873f68db68a94713bfde70768a56b183a31e
       body: |
