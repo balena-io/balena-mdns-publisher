@@ -1,4 +1,17 @@
 - commits:
+    - subject: "patch: Filter out non-core hosts from checks"
+      hash: a2871f3a6d95361a978ad74ae5cf12017024d556
+      body: |-
+        Unltil all balenaCloud components bump to the new base image, this filter is required to pass tests (mDNS bob.local matrix job)
+
+        https://balena.fibery.io/Work/Project/Migrate-our-development-environment-to-closer-match-our-production-environment-(k8s)-848
+      footer: {}
+      author: Anton Belodedenko
+      nested: []
+  version: 1.27.198
+  title: ""
+  date: 2025-07-30T01:01:16.286Z
+- commits:
     - subject: Update balena/open-balena-base Docker tag to v18.0.39
       hash: 488300f3fe596e35333d27eed64c44e023860b58
       body: |
