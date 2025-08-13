@@ -34,15 +34,15 @@
   "devDependencies": {
     "@balena/lint": "^9.0.0",
     "@types/lodash": "^4.17.4",
-    "@types/node": "^22.0.0",
+    "@types/node": "^24.2.1",
     "@types/request-promise": "4.1.51",
     "husky": "^9.0.0",
     "lint-staged": "^16.0.0",
     "typescript": "^5.4.5"
   },
   "engines": {
-    "node": "^22.0.0",
-    "npm": "^11.0.0"
+    "node": "^24.5.0",
+    "npm": "^11.5.2"
   },
   "husky": {
     "hooks": {
