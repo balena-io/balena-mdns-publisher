@@ -1,4 +1,17 @@
 - commits:
+    - subject: Update open-balena-base to 19.0.0
+      hash: f27a628ec24dc74ab637a0d1f451d66b02deb46a
+      body: |
+        Update open-balena-base from 18.0.41 to 19.0.0
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Pagan Gazzard
+      nested: []
+  version: 1.27.201
+  title: ""
+  date: 2025-08-13T14:02:51.411Z
+- commits:
     - subject: Update balena/open-balena-base Docker tag to v18.0.41
       hash: 1fb6b525a321fbe55c3637fab4148e950f944b65
       body: |
