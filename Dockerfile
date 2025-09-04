@@ -1,5 +1,6 @@
-FROM balena/open-balena-base:19.0.0 as base
+FROM balena/open-balena-base:v19.2.1-s6-overlay AS base
 
+# hadolint ignore=DL3008
 RUN apt-get update && \
     apt-get install -yq --no-install-recommends \
     libdbus-glib-1-dev \
@@ -13,10 +14,6 @@ COPY package.json package-lock.json /usr/src/app/
 
 # Install the publisher
 RUN JOBS=MAX npm ci --unsafe-perm --production && npm cache clean --force && rm -rf /tmp/*
-
-# Copy and enable the service
-COPY config/services /etc/systemd/system
-RUN systemctl enable balena-mdns-publisher.service
 
 # Build service
 FROM base AS build
@@ -37,3 +34,8 @@ COPY --from=build /usr/src/app/config /usr/src/app/config
 COPY --from=base /usr/src/app/node_modules /usr/src/app/node_modules
 
 COPY docker-hc /usr/src/app/
+
+COPY entry.sh /usr/src/app/
+RUN chmod +x entry.sh
+
+CMD [ "/usr/src/app/entry.sh" ]
