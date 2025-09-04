@@ -1,4 +1,20 @@
 - commits:
+    - subject: Switch to s6-overlay variant of open-balena-base
+      hash: a75f092e226ec68f2531dd81496e32f828c61c48
+      body: |
+        This allows running with reduced permissions and avoids conflicts
+        with hosts running cgroups v2.
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Kyle Harding <kyle@balena.io>
+        signed-off-by: Kyle Harding <kyle@balena.io>
+      author: Kyle Harding
+      nested: []
+  version: 1.28.0
+  title: ""
+  date: 2025-09-04T13:30:15.512Z
+- commits:
     - subject: Update open-balena-base to 19.0.0
       hash: f27a628ec24dc74ab637a0d1f451d66b02deb46a
       body: |
