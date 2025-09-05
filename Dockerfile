@@ -1,4 +1,4 @@
-FROM balena/open-balena-base:v19.2.1-s6-overlay AS base
+FROM balena/open-balena-base:v20.0.0-s6-overlay AS base
 
 # hadolint ignore=DL3008
 RUN apt-get update && \
@@ -13,7 +13,7 @@ WORKDIR /usr/src/app
 COPY package.json package-lock.json /usr/src/app/
 
 # Install the publisher
-RUN JOBS=MAX npm ci --unsafe-perm --production && npm cache clean --force && rm -rf /tmp/*
+RUN JOBS=MAX npm ci --omit=dev && npm cache clean --force && rm -rf /tmp/*
 
 # Build service
 FROM base AS build
