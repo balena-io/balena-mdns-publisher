@@ -1,4 +1,4 @@
-FROM balena/open-balena-base:20.2.2-s6-overlay AS base
+FROM balena/open-balena-base:20.2.5-s6-overlay AS base
 
 # hadolint ignore=DL3008
 RUN apt-get update && \
