@@ -1,4 +1,14 @@
 - commits:
+    - subject: "patch: ARM64 builds"
+      hash: 37e84473556ca6d4e3496b1da9b2b63739dde208
+      body: ""
+      footer: {}
+      author: Anton B.
+      nested: []
+  version: 1.28.6
+  title: ""
+  date: 2026-05-05T19:23:34.617Z
+- commits:
     - subject: Update dependency lodash to v4.18.1 [SECURITY]
       hash: 30dac947c9bba9323e58d5113fa5d741e1349d80
       body: |
