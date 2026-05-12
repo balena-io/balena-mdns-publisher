@@ -1,4 +1,56 @@
 - commits:
+    - subject: Update balena/open-balena-base Docker tag to v20.2.8
+      hash: c74df948d440e473626b63cb90630d1589a8703c
+      body: |
+        Update balena/open-balena-base from 20.2.5 to 20.2.8
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: balena-renovate[bot]
+      nested:
+        - commits:
+            - subject: Update Node.js to v24.13.1
+              hash: cb7498e63d3643c394218659b0017d53f962a2c0
+              body: |
+                Update node from 24.13.0 to 24.13.1
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: balena-renovate[bot]
+              nested: []
+          version: open-balena-base-20.2.8
+          title: ""
+          date: 2026-02-10T14:29:22.948Z
+        - commits:
+            - subject: Update dependency just-containers/s6-overlay to v3.2.2.0
+              hash: 07616b2420aaad57986035551751143768a5976e
+              body: |
+                Update just-containers/s6-overlay from 3.2.1.0 to 3.2.2.0
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: balena-renovate[bot]
+              nested: []
+          version: open-balena-base-20.2.7
+          title: ""
+          date: 2026-01-24T21:57:07.513Z
+        - commits:
+            - subject: Update Node.js to v24.13.0
+              hash: 41a9162d567175b3702f425a87d58a66d98bdf4b
+              body: |
+                Update node from 24.12.0 to 24.13.0
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: balena-renovate[bot]
+              nested: []
+          version: open-balena-base-20.2.6
+          title: ""
+          date: 2026-01-13T16:12:46.276Z
+  version: 1.28.7
+  title: ""
+  date: 2026-05-12T17:53:40.733Z
+- commits:
     - subject: "patch: ARM64 builds"
       hash: 37e84473556ca6d4e3496b1da9b2b63739dde208
       body: ""
