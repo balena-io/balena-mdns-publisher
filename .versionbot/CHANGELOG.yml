@@ -1,4 +1,368 @@
 - commits:
+    - subject: Update balena/open-balena-base Docker tag to v21
+      hash: 51f5186a4f5d6ecfbc6b74de09b4275f3f975710
+      body: |
+        Update balena/open-balena-base from 20.2.8 to 21.0.26
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: balena-renovate[bot]
+      nested:
+        - commits:
+            - subject: Update Node.js to v24.17.0
+              hash: db8bcc72acbda3f89be351dce1ed42dd51395ea4
+              body: |
+                Update node from 24.16.0 to 24.17.0
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: balena-renovate[bot]
+              nested: []
+          version: open-balena-base-21.0.26
+          title: ""
+          date: 2026-06-18T06:35:58.575Z
+        - commits:
+            - subject: Update debian:trixie-20260610 Docker digest to fe7312b
+              hash: 47203c360f92a5e243530036c78fca038c69e564
+              body: |
+                Update debian
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: balena-renovate[bot]
+              nested: []
+          version: open-balena-base-21.0.25
+          title: ""
+          date: 2026-06-11T08:38:13.074Z
+        - commits:
+            - subject: Update debian:trixie-20260610 Docker digest to 50d8c6e
+              hash: f06a51474782b3228dfad97681a8904e0c951aa9
+              body: |
+                Update debian
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: balena-renovate[bot]
+              nested: []
+          version: open-balena-base-21.0.24
+          title: ""
+          date: 2026-06-11T06:39:26.537Z
+        - commits:
+            - subject: Update debian Docker tag to trixie-20260610
+              hash: 8ac0bf86cc8ad1b61e3821d18c8a6812d96b4fe0
+              body: |
+                Update debian from trixie-20260518 to trixie-20260610
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: balena-renovate[bot]
+              nested: []
+          version: open-balena-base-21.0.23
+          title: ""
+          date: 2026-06-11T05:49:46.108Z
+        - commits:
+            - subject: Update Node.js to v24.16.0
+              hash: b7bcd031d09ba9bd37bf189f70a7ee530e8d94f0
+              body: |
+                Update node from 24.15.0 to 24.16.0
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: balena-renovate[bot]
+              nested: []
+          version: open-balena-base-21.0.22
+          title: ""
+          date: 2026-05-21T14:04:30.230Z
+        - commits:
+            - subject: Update debian:trixie-20260518 Docker digest to 4ae6766
+              hash: 9e2fcd0e710d2b16071e6c2240ddd6496e4f9cd2
+              body: |
+                Update debian
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: balena-renovate[bot]
+              nested: []
+          version: open-balena-base-21.0.21
+          title: ""
+          date: 2026-05-20T02:54:38.405Z
+        - commits:
+            - subject: Update debian Docker tag to trixie-20260518
+              hash: b5d245358558539be381f145dced9b508a5b2b93
+              body: |
+                Update debian from trixie-20260505 to trixie-20260518
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: balena-renovate[bot]
+              nested: []
+          version: open-balena-base-21.0.20
+          title: ""
+          date: 2026-05-19T23:20:57.863Z
+        - commits:
+            - subject: Remove DSA key references
+              hash: 146c0d1d220f2c3e76872a4ce99ba7cdbac3670c
+              body: |
+                We recently dropped DSA key generation from cert-manager
+                as the latest ssh-keygen no longer supports it. Removing
+                references to those keys from this codebase as well.
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: joshbwlng
+              nested: []
+          version: open-balena-base-21.0.19
+          title: ""
+          date: 2026-05-13T14:46:58.611Z
+        - commits:
+            - subject: Pin debian Docker tag to e2d08da
+              hash: 80eaf869b00bd7caad8258fbf1d59ee885117562
+              body: |
+                Update debian
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: balena-renovate[bot]
+              nested: []
+          version: open-balena-base-21.0.18
+          title: ""
+          date: 2026-05-12T17:55:10.860Z
+        - commits:
+            - subject: Update debian Docker tag to trixie-20260505
+              hash: 9fb03486b35522a9e6063899ec449019dfd94f15
+              body: |
+                Update debian from trixie-20260421 to trixie-20260505
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: balena-renovate[bot]
+              nested: []
+          version: open-balena-base-21.0.17
+          title: ""
+          date: 2026-05-09T16:17:10.195Z
+        - commits:
+            - subject: Update dependency just-containers/s6-overlay to v3.2.3.0
+              hash: bc01af916911e6aaeb6f115adb0edabb295481ff
+              body: |
+                Update just-containers/s6-overlay from 3.2.2.0 to 3.2.3.0
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: balena-renovate[bot]
+              nested: []
+          version: open-balena-base-21.0.16
+          title: ""
+          date: 2026-05-09T15:37:18.283Z
+        - commits:
+            - subject: Update debian Docker tag to trixie-20260421
+              hash: 48ba4b99a08f273d13c8ebb82b27ed248452c19f
+              body: |
+                Update debian from trixie-20260406 to trixie-20260421
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: balena-renovate[bot]
+              nested: []
+          version: open-balena-base-21.0.15
+          title: ""
+          date: 2026-04-22T02:50:29.237Z
+        - commits:
+            - subject: Update Node.js to v24.15.0
+              hash: c27b3097804d54ed12742b65886d7b89084bb5f0
+              body: |
+                Update node from 24.14.1 to 24.15.0
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: balena-renovate[bot]
+              nested: []
+          version: open-balena-base-21.0.14
+          title: ""
+          date: 2026-04-16T08:32:55.119Z
+        - commits:
+            - subject: Update debian Docker tag to trixie-20260406
+              hash: c348b2abfd80eb6347d4000320c79a772b096e86
+              body: |
+                Update debian from trixie-20260316 to trixie-20260406
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: balena-renovate[bot]
+              nested: []
+          version: open-balena-base-21.0.13
+          title: ""
+          date: 2026-04-07T02:54:08.216Z
+        - commits:
+            - subject: Revert flowzone pinning to master
+              hash: b0434d2f26b715fad9aa3d025c109e2bb20d0800
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: Kyle Harding
+              nested: []
+          version: open-balena-base-21.0.12
+          title: ""
+          date: 2026-03-26T17:37:38.362Z
+        - commits:
+            - subject: Update product-os/flowzone digest to 8ea01d3
+              hash: 9078cb19242e3818e98ad20c3b41b3c4619e15bb
+              body: |
+                Update product-os/flowzone
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: balena-renovate[bot]
+              nested: []
+          version: open-balena-base-21.0.11
+          title: ""
+          date: 2026-03-26T12:17:43.166Z
+        - commits:
+            - subject: Update product-os/flowzone digest to 3eb3c97
+              hash: 9f7dfe61f9c823a7cd1706870444efaa5f429aa6
+              body: |
+                Update product-os/flowzone
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: balena-renovate[bot]
+              nested: []
+          version: open-balena-base-21.0.10
+          title: ""
+          date: 2026-03-26T10:40:02.048Z
+        - commits:
+            - subject: Update product-os/flowzone digest to cc9836f
+              hash: 0c2162728b087b0927d427e62e6b3d45ec3c371c
+              body: |
+                Update product-os/flowzone
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: balena-renovate[bot]
+              nested: []
+          version: open-balena-base-21.0.9
+          title: ""
+          date: 2026-03-26T04:03:33.790Z
+        - commits:
+            - subject: Update product-os/flowzone digest to b79645a
+              hash: c758cd0353b67a10f7de70c88dbd2933f331b31f
+              body: |
+                Update product-os/flowzone
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: balena-renovate[bot]
+              nested: []
+          version: open-balena-base-21.0.8
+          title: ""
+          date: 2026-03-26T02:55:28.055Z
+        - commits:
+            - subject: Update product-os/flowzone digest to 4815186
+              hash: 81b8598278f10d042ac0b97210bf5fe5afe5d520
+              body: |
+                Update product-os/flowzone
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: balena-renovate[bot]
+              nested: []
+          version: open-balena-base-21.0.7
+          title: ""
+          date: 2026-03-26T01:49:48.158Z
+        - commits:
+            - subject: Update product-os/flowzone digest to f955793
+              hash: 024dd9ee910280a78572743ec1fe8b9318b44e85
+              body: |
+                Update product-os/flowzone
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: balena-renovate[bot]
+              nested: []
+          version: open-balena-base-21.0.6
+          title: ""
+          date: 2026-03-25T23:21:08.991Z
+        - commits:
+            - subject: Update product-os/flowzone digest to 8674dc5
+              hash: 6313d69e0e1aaa0158e75f6a67df82759e9867f1
+              body: |
+                Update product-os/flowzone
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: balena-renovate[bot]
+              nested: []
+          version: open-balena-base-21.0.5
+          title: ""
+          date: 2026-03-25T22:43:03.508Z
+        - commits:
+            - subject: Update Node.js to v24.14.1
+              hash: f6d8ec99ac622a2f71cca4fbbffa8f17c4c01758
+              body: |
+                Update node from 24.14.0 to 24.14.1
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: balena-renovate[bot]
+              nested: []
+          version: open-balena-base-21.0.4
+          title: ""
+          date: 2026-03-25T21:46:58.335Z
+        - commits:
+            - subject: Pin product-os/flowzone action to eb703ea
+              hash: c10d50f6d7bd3d7db069e4905bdae90a09e3b57b
+              body: |
+                Update product-os/flowzone
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: balena-renovate[bot]
+              nested: []
+          version: open-balena-base-21.0.3
+          title: ""
+          date: 2026-03-25T20:27:40.571Z
+        - commits:
+            - subject: Update debian Docker tag to trixie-20260316
+              hash: b2e5175b4d3b7898054a61566074b21e453da29d
+              body: |
+                Update debian from trixie to trixie-20260316
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: balena-renovate[bot]
+              nested: []
+          version: open-balena-base-21.0.2
+          title: ""
+          date: 2026-03-24T18:26:45.710Z
+        - commits:
+            - subject: Update Node.js to v24.14.0
+              hash: 0e5fc2dca054e7b6751f68b6d69e7ca51be9db01
+              body: |
+                Update node from 24.13.1 to 24.14.0
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: balena-renovate[bot]
+              nested: []
+          version: open-balena-base-21.0.1
+          title: ""
+          date: 2026-02-24T16:24:20.567Z
+        - commits:
+            - subject: Remove DELTA_S3_HOST from HOSTS_CONFIG
+              hash: c75a3919ff744e6a4e4b42f45719cfb666a390a7
+              body: ""
+              footer:
+                Change-type: major
+                change-type: major
+              author: joshbwlng
+              nested: []
+          version: open-balena-base-21.0.0
+          title: ""
+          date: 2026-02-19T02:40:33.603Z
+  version: 1.28.8
+  title: ""
+  date: 2026-06-24T00:47:27.819Z
+- commits:
     - subject: Update balena/open-balena-base Docker tag to v20.2.8
       hash: c74df948d440e473626b63cb90630d1589a8703c
       body: |
