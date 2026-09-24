@@ -1,4 +1,17 @@
 - commits:
+    - subject: Update dependency lint-staged to v17
+      hash: 96b020d1b6a37227ec903c6cbc5275d59b20627b
+      body: |
+        Update lint-staged from 16.1.2 to 17.5.1
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: balena-renovate[bot]
+      nested: []
+  version: 1.28.14
+  title: ""
+  date: 2026-09-24T12:49:46.450Z
+- commits:
     - subject: Update balena/open-balena-base Docker tag to v21.0.28
       hash: 96f0a3e1382d6018a616123f2572035d349906bd
       body: |
