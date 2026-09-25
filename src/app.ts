@@ -1,8 +1,8 @@
-import * as BalenaSdk from 'balena-sdk';
-import * as Bluebird from 'bluebird';
-import { Message, systemBus } from 'dbus-native';
-import * as _ from 'lodash';
-import * as os from 'os';
+import BalenaSdk from 'balena-sdk';
+import Bluebird from 'bluebird';
+import { type Message, systemBus } from 'dbus-native';
+import _ from 'lodash';
+import os from 'os';
 
 /**
  * Hosts published via Avahi.
@@ -30,21 +30,21 @@ const dbus = systemBus();
  */
 const dbusInvoker = (message: Message): PromiseLike<any> => {
 	return Bluebird.fromCallback((cb) => {
-		return dbus.invoke(message, cb);
+		dbus.invoke(message, cb);
 	});
 };
 
 const getIPv4InterfaceInfo = (iface?: string): os.NetworkInterfaceInfo[] => {
 	return Object.entries(os.networkInterfaces())
 		.filter(([nic]) => !iface || nic === iface)
-		.flatMap(([, ips]) => ips || [])
+		.flatMap(([, ips]) => ips ?? [])
 		.filter((ip) => !ip.internal && ip.family === 'IPv4');
 };
 
 const getIPv6InterfaceInfo = (iface?: string): os.NetworkInterfaceInfo[] => {
 	return Object.entries(os.networkInterfaces())
 		.filter(([nic]) => !iface || nic === iface)
-		.flatMap(([, ips]) => ips || [])
+		.flatMap(([, ips]) => ips ?? [])
 		.filter((ip) => !ip.internal && ip.family === 'IPv6' && ip.scopeid === 0);
 };
 
@@ -192,7 +192,7 @@ const balena = BalenaSdk.getSdk({
 	apiUrl: `https://${process.env.API_HOST}/`,
 });
 
-(async () => {
+void (async () => {
 	try {
 		// get the first non-link local IP for each address family
 		const ipAddrs = _.compact([
