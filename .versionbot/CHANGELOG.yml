@@ -1,4 +1,17 @@
 - commits:
+    - subject: Update typescript to 6.x
+      hash: 4724b61dabc75da15d0218d07a16c76422c152ce
+      body: |
+        https://balena.fibery.io/Work/Project/Update-TypeScript-to-6.0-on-our-top-components-2389
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Pagan Gazzard
+      nested: []
+  version: 1.28.15
+  title: ""
+  date: 2026-09-25T15:18:18.692Z
+- commits:
     - subject: Update dependency lint-staged to v17
       hash: 96b020d1b6a37227ec903c6cbc5275d59b20627b
       body: |
