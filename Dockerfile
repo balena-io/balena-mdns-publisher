@@ -1,4 +1,4 @@
-FROM balena/open-balena-base:21.0.28-s6-overlay@sha256:882e2506e722d3dfb6986624561447d0244c2bf901757f7a77c7250a7cf13bac AS base
+FROM balena/open-balena-base:22.0.5-s6-overlay@sha256:daf08661cdbb5d8a8d3d5c2f8de271ff7f768c8ad1d3e33241b5bc4cdee5a3fb AS base
 
 # hadolint ignore=DL3008
 RUN apt-get update && \
