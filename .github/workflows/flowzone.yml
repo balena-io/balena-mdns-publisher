@@ -5,10 +5,12 @@ on:
     branches:
       - "main"
       - "master"
+  push:
+    branches: [main, master]
 jobs:
   flowzone:
     name: Flowzone
-    uses: product-os/flowzone/.github/workflows/flowzone.yml@master
+    uses: product-os/flowzone/.github/workflows/flowzone.yml@master # flowzonify 0.4.21
     secrets: inherit
     with:
       docker_images: balena/balena-mdns-publisher
