@@ -30,12 +30,14 @@ FROM base
 # Copy built code
 COPY --from=build /usr/src/app/build /usr/src/app/build
 COPY --from=build /usr/src/app/bin /usr/src/app/bin
-COPY --from=build /usr/src/app/config /usr/src/app/config
 COPY --from=base /usr/src/app/node_modules /usr/src/app/node_modules
 
 COPY docker-hc /usr/src/app/
 
 COPY entry.sh /usr/src/app/
 RUN chmod +x entry.sh
+
+# s6 runs every CMD under with-contenv, so CMD sees the container env.
+ENV S6_CMD_ARG0=/command/with-contenv
 
 CMD [ "/usr/src/app/entry.sh" ]
