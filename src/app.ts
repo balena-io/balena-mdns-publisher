@@ -1,4 +1,4 @@
-import BalenaSdk from 'balena-sdk';
+import * as BalenaSdk from 'balena-sdk';
 import Bluebird from 'bluebird';
 import { type Message, systemBus } from 'dbus-native';
 import _ from 'lodash';
