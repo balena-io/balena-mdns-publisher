@@ -30,7 +30,6 @@ FROM base
 # Copy built code
 COPY --from=build /usr/src/app/build /usr/src/app/build
 COPY --from=build /usr/src/app/bin /usr/src/app/bin
-COPY --from=build /usr/src/app/config /usr/src/app/config
 COPY --from=base /usr/src/app/node_modules /usr/src/app/node_modules
 
 COPY docker-hc /usr/src/app/
