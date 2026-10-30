@@ -1,0 +1,11 @@
+services:
+  sut:
+    image: sut:latest
+    build: .
+    environment:
+      DNS_TLD: example.test
+      MDNS_TLD: example.test
+      MDNS_SUBDOMAINS: api
+    volumes:
+      # Replaces the publisher so that entry.sh, the CMD, runs the check instead.
+      - ./tests/check-env:/usr/src/app/bin/balena-mdns-publisher:ro
