@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# Runs in place of the publisher. A plain shebang keeps the env that entry.sh passed.
+# s6 exits the container with this script's exit code.
+
+# shellcheck disable=SC1091
+source /etc/s6-overlay/scripts/functions.sh
+
+failed=0
+
+# Runs the command after the label. A passing command prints ok.
+# A failing command prints not ok and sets the exit code.
+report() {
+	if "${@:2}"; then
+		echo "ok: ${1}"
+		return
+	fi
+	echo "not ok: ${1}"
+	failed=1
+}
+
+for service in dbus avahi-daemon certs-watch; do
+	report "${service} is up" is_up "${service}"
+done
+
+report "generated API_HOST='${API_HOST}'" test "${API_HOST}" = api.example.test
+report "input MDNS_TLD='${MDNS_TLD}'" test "${MDNS_TLD}" = example.test
+
+exit "${failed}"
