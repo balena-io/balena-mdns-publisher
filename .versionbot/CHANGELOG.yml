@@ -1,4 +1,35 @@
 - commits:
+    - subject: Restore namespace import of balena-sdk
+      hash: c3d9c574d7ee51b71225ed04bca0e5a9d250100a
+      body: |
+        The TypeScript 6 update switched to a default import, but balena-sdk
+        has no default export, so the publisher crashed on startup with
+        `balena_sdk_1.default` undefined.
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Kyle Harding <kyle@balena.io>
+        signed-off-by: Kyle Harding <kyle@balena.io>
+      author: Kyle Harding
+      nested: []
+    - subject: Run the CMD with the container env through S6_CMD_ARG0
+      hash: 335824f7c34c578590dd87676d9820b9d2ed6cca
+      body: |
+        open-balena-base now exports generated values to the s6 container
+        environment. S6_CMD_ARG0 runs the CMD under with-contenv so entry.sh
+        sees them, and the confd env template that copied each var is no
+        longer needed.
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Kyle Harding <kyle@balena.io>
+        signed-off-by: Kyle Harding <kyle@balena.io>
+      author: Kyle Harding
+      nested: []
+  version: 1.28.20
+  title: ""
+  date: 2026-11-13T14:02:44.862Z
+- commits:
     - subject: Update dependency @balena/lint to v11
       hash: c3b801e8b857509556f0a48447b04f8370302683
       body: |
